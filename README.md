@@ -1,4 +1,4 @@
-# Hospital Management System API
+# Saarthi : Hospital Management System API
 
 A comprehensive RESTful API for hospital management system built with Flask, featuring JWT authentication, role-based access control (RBAC), and complete healthcare management capabilities. This is a pure backend API designed to be consumed by frontend applications or mobile apps.
 
@@ -369,3 +369,4 @@ For support and questions, please contact:
 - Emergency services
 - Admin dashboard
 - RESTful API with comprehensive endpoints
+
