@@ -356,7 +356,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For support and questions, please contact:
 - Email: bathampranshu67@gmail.com
-- Issues: [GitHub Issues](#)
+- Issues: [GitHub Issues](https://github.com/PranshuBatham67/Saarthi/issues)
 
 ## Changelog
 
@@ -369,5 +369,6 @@ For support and questions, please contact:
 - Emergency services
 - Admin dashboard
 - RESTful API with comprehensive endpoints
+
 
 
