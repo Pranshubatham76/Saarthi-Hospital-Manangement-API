@@ -355,8 +355,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Support
 
 For support and questions, please contact:
-- Email: support@hospitalmanagementsystem.com
-- Issues: [GitHub Issues](https://github.com/yourusername/hospital_management_system/issues)
+- Email: bathampranshu67@gmail.com
+- Issues: [GitHub Issues](#)
 
 ## Changelog
 
@@ -369,4 +369,5 @@ For support and questions, please contact:
 - Emergency services
 - Admin dashboard
 - RESTful API with comprehensive endpoints
+
 
