@@ -1,0 +1,10 @@
+This is the biggest project after learning flask for backend developement. In this project I have made multiple API like UserAuth&Autherization API, BloodBankAPI, and many more...
+
+While making this project I learn many things like :
+        1. What is redis? And, How to work with it?
+        2. What is celey? And, How to work with it?
+        3. How to use JWT authentication just like we use in node.js/express.js for this I use flask_jwt_extented library.
+        4. How to document project?
+        5. How to write the script to for testing endpoints of the API?
+        6. What is the use of Enum??
+        7. What is the use of cookies?? How cookies handle data?? How cookies reduce latency??
