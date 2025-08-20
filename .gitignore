@@ -1,0 +1,16 @@
+.env
+.venv/
+db.sqlite3
+manage.py
+media/
+staticfiles/
+__pycache__/
+static
+uploads/
+API_TEST_SUMMARY.md
+FINAL_TEST_REPORT.md
+LINKEDIN_POST_OPTIMIZED.md
+LINKEDIN_POST.md
+solve.txt
+logs/
+DEPLOYMENT.md
