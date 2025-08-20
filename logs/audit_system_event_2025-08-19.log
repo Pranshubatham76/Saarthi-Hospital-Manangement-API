@@ -1,0 +1,2 @@
+{"timestamp": "2025-08-19T17:47:59.761888", "event_type": "system_event", "system_event_type": "test", "description": "test event", "severity": "info", "component": null, "server_info": {"host": "localhost:5000", "url": "http://localhost:5000/audit/system-event", "method": "POST"}}
+{"timestamp": "2025-08-19T17:58:00.239734", "event_type": "system_event", "system_event_type": "test", "description": "test event", "severity": "info", "component": null, "server_info": {"host": "localhost:5000", "url": "http://localhost:5000/audit/system-event", "method": "POST"}}
