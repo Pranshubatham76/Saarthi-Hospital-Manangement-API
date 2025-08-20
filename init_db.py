@@ -13,7 +13,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 try:
     from app import create_app
-    from app.models import db, *
+    from app.models import db
+    from app.models import *
     from app.utils.helpers import hash_password
 except ImportError as e:
     print(f"Error importing modules: {e}")

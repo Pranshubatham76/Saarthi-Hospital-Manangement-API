@@ -108,3 +108,86 @@ def get_admin_logs():
         
     except Exception as e:
         return create_error_response(f'Failed to retrieve logs: {str(e)}', status_code=500)
+
+
+@admin_bp.route('/stats', methods=['GET'])
+@admin_required
+def get_system_stats():
+    """Get comprehensive system statistics"""
+    try:
+        from app.models import Emergency, Notification, Appointment, BloodBank
+        
+        stats = {
+            'users': {
+                'total': Users.query.count(),
+                'active': Users.query.filter_by(active=True).count() if hasattr(Users, 'active') else Users.query.count()
+            },
+            'hospitals': {
+                'total': Hospital.query.count()
+            },
+            'emergencies': {
+                'total': Emergency.query.count(),
+                'pending': Emergency.query.filter_by(forward_status='pending').count(),
+                'processed': Emergency.query.filter_by(forward_status='processed').count()
+            },
+            'notifications': {
+                'total': Notification.query.count(),
+                'unread': Notification.query.filter_by(read=False).count()
+            },
+            'appointments': {
+                'total': Appointment.query.count(),
+                'upcoming': Appointment.query.filter(Appointment.status == 'scheduled').count()
+            },
+            'blood_banks': {
+                'total': BloodBank.query.count()
+            },
+            'admins': {
+                'total': Admin.query.count()
+            }
+        }
+        
+        return create_success_response(
+            'System statistics retrieved successfully',
+            {'stats': stats}
+        )
+        
+    except Exception as e:
+        return create_error_response(f'Failed to retrieve system stats: {str(e)}', status_code=500)
+
+
+@admin_bp.route('/users/<int:user_id>', methods=['GET'])
+@admin_required
+def get_user_details(user_id):
+    """Get user details by ID"""
+    try:
+        user = Users.query.get_or_404(user_id)
+        user_data = serialize_model(user, exclude=['password'])
+        
+        return create_success_response(
+            'User details retrieved successfully',
+            {'user': user_data}
+        )
+        
+    except Exception as e:
+        return create_error_response(f'Failed to retrieve user: {str(e)}', status_code=500)
+
+
+@admin_bp.route('/users/<int:user_id>', methods=['DELETE'])
+@admin_required
+def delete_user(user_id):
+    """Delete user by ID"""
+    try:
+        user = Users.query.get_or_404(user_id)
+        
+        # In a real system, you might want to soft delete or archive the user
+        db.session.delete(user)
+        db.session.commit()
+        
+        return create_success_response(
+            'User deleted successfully',
+            {}
+        )
+        
+    except Exception as e:
+        db.session.rollback()
+        return create_error_response(f'Failed to delete user: {str(e)}', status_code=500)

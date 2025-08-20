@@ -158,6 +158,13 @@ def send_notification():
         
         for user_id in user_ids:
             try:
+                # Verify user exists before creating notification
+                from app.models import Users
+                user = Users.query.get(user_id)
+                if not user:
+                    failed_count += 1
+                    continue
+                
                 # Create in-app notification
                 notification = Notification(
                     user_id=user_id,
@@ -180,9 +187,7 @@ def send_notification():
                 
                 # Send email notification if requested
                 if send_email:
-                    # Get user email (this would require user lookup)
-                    from app.models import Users
-                    user = Users.query.get(user_id)
+                    # User already fetched above
                     if user and user.email:
                         email_service.send_notification_and_email(
                             user_email=user.email,

@@ -14,6 +14,38 @@ from app.utils.helpers import (
 auth_bp = Blueprint('auth', __name__)
 
 
+@auth_bp.route('/forgot-password', methods=['POST'])
+def forgot_password():
+    """Request password reset (placeholder implementation)"""
+    try:
+        data = request.get_json()
+        
+        if not data.get('email'):
+            return create_error_response('email is required', status_code=400)
+        
+        # Check if user exists
+        user = Users.query.filter_by(email=data['email']).first()
+        if not user:
+            # Don't reveal if email exists for security reasons
+            return create_success_response(
+                'If the email exists, a password reset link will be sent',
+                {}
+            )
+        
+        # In a real implementation, you would:
+        # 1. Generate a secure reset token
+        # 2. Store it in database with expiry
+        # 3. Send email with reset link
+        
+        return create_success_response(
+            'Password reset instructions sent to email if account exists',
+            {}
+        )
+        
+    except Exception as e:
+        return create_error_response(f'Password reset request failed: {str(e)}', status_code=500)
+
+
 @auth_bp.route('/register', methods=['POST'])
 def register():
     """Register a new user"""

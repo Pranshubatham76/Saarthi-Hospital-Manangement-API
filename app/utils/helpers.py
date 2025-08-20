@@ -141,7 +141,7 @@ def serialize_model(model, fields=None, exclude=None):
             data[column.name] = format_datetime(value)
         elif hasattr(value, 'date') and callable(getattr(value, 'date')):
             data[column.name] = format_date(value)
-        elif hasattr(value, 'time') and callable(getattr(value, 'time')):
+        elif hasattr(value, 'strftime') and not isinstance(value, datetime):  # Time objects
             data[column.name] = format_time(value)
         elif hasattr(value, 'value'):  # Enum values
             data[column.name] = value.value

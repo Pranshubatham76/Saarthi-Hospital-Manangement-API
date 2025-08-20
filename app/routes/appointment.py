@@ -119,6 +119,12 @@ def get_opd_appointment(appointment_id):
             return create_error_response('Appointment not found', status_code=404)
         
         # Check access permissions
+        # Convert JWT identity (string) to int for comparison
+        try:
+            current_user_id = int(current_user_id)
+        except (ValueError, TypeError):
+            return create_error_response('Invalid user identity', status_code=401)
+            
         if (appointment.patient_id != current_user_id and 
             user_role not in ['admin', 'doctor', 'hospital_admin']):
             return create_error_response('Access denied', status_code=403)
@@ -158,6 +164,12 @@ def update_opd_appointment(appointment_id):
             return create_error_response('Appointment not found', status_code=404)
         
         # Check permissions - only patient or admin/doctor can update
+        # Convert JWT identity (string) to int for comparison
+        try:
+            current_user_id = int(current_user_id)
+        except (ValueError, TypeError):
+            return create_error_response('Invalid user identity', status_code=401)
+            
         if (appointment.patient_id != current_user_id and 
             user_role not in ['admin', 'doctor', 'hospital_admin']):
             return create_error_response('Access denied', status_code=403)
@@ -224,6 +236,12 @@ def cancel_opd_appointment(appointment_id):
             return create_error_response('Appointment not found', status_code=404)
         
         # Check permissions
+        # Convert JWT identity (string) to int for comparison
+        try:
+            current_user_id = int(current_user_id)
+        except (ValueError, TypeError):
+            return create_error_response('Invalid user identity', status_code=401)
+            
         if (appointment.patient_id != current_user_id and 
             user_role not in ['admin', 'hospital_admin']):
             return create_error_response('Access denied', status_code=403)

@@ -3,7 +3,7 @@ from datetime import datetime
 import enum
 
 from sqlalchemy import UniqueConstraint, event, text
-from sqlalchemy.dialects.postgresql import ARRAY, JSON
+from sqlalchemy.dialects.postgresql import JSON
 from app import db
 
 # ---------------------------
@@ -407,7 +407,7 @@ class BloodBank(db.Model):
     location = db.Column(db.String(500), nullable=False)
     contact_no = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), nullable=False, unique=True)
-    blood_types_available = db.Column(ARRAY(db.String(10)), nullable=True)
+    blood_types_available = db.Column(JSON, nullable=True)
     stock_levels = db.Column(JSON, nullable=True)
     category = db.Column(db.String(80), nullable=True)
     role = db.Column(db.String(10), nullable=False, default='bloodbank')

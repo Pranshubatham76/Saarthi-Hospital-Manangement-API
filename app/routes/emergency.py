@@ -137,6 +137,73 @@ def update_emergency(case_id):
         return create_error_response(f'Failed to update emergency: {str(e)}', status_code=500)
 
 
+@emergency_bp.route('/stats', methods=['GET'])
+@admin_required
+def get_emergency_stats():
+    """Get emergency statistics"""
+    try:
+        from datetime import datetime, timedelta
+        from sqlalchemy import func
+        
+        # Get date range for filtering
+        days_back = request.args.get('days_back', 30, type=int)
+        start_date = datetime.utcnow() - timedelta(days=days_back)
+        
+        # Basic statistics
+        total_emergencies = Emergency.query.count()
+        recent_emergencies = Emergency.query.filter(Emergency.created_at >= start_date).count()
+        
+        # Status breakdown
+        status_counts = db.session.query(
+            Emergency.forward_status,
+            func.count(Emergency.id).label('count')
+        ).group_by(Emergency.forward_status).all()
+        
+        status_breakdown = {status: count for status, count in status_counts}
+        
+        # Type breakdown
+        type_counts = db.session.query(
+            Emergency.emergency_type,
+            func.count(Emergency.id).label('count')
+        ).group_by(Emergency.emergency_type).all()
+        
+        type_breakdown = {emergency_type: count for emergency_type, count in type_counts}
+        
+        # Recent activity
+        recent_activity = Emergency.query.filter(
+            Emergency.created_at >= start_date
+        ).order_by(Emergency.created_at.desc()).limit(10).all()
+        
+        recent_list = []
+        for emergency in recent_activity:
+            emergency_data = serialize_model(emergency)
+            if emergency.user:
+                emergency_data['user'] = serialize_model(emergency.user, exclude=['password'])
+            recent_list.append(emergency_data)
+        
+        # Calculate response times (if available)
+        avg_response_time = None
+        # This would require additional fields to track response times
+        
+        stats = {
+            'total_emergencies': total_emergencies,
+            'recent_emergencies': recent_emergencies,
+            'status_breakdown': status_breakdown,
+            'type_breakdown': type_breakdown,
+            'recent_activity': recent_list,
+            'period_days': days_back,
+            'avg_response_time': avg_response_time
+        }
+        
+        return create_success_response(
+            'Emergency statistics retrieved successfully',
+            {'stats': stats}
+        )
+        
+    except Exception as e:
+        return create_error_response(f'Failed to retrieve emergency stats: {str(e)}', status_code=500)
+
+
 @emergency_bp.route('/ambulances/available', methods=['GET'])
 def get_available_ambulances():
     """Get available ambulances"""

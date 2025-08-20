@@ -296,3 +296,76 @@ def get_blood_requests():
         
     except Exception as e:
         return create_error_response(f'Failed to retrieve blood requests: {str(e)}', status_code=500)
+
+
+@blood_bank_bp.route('/inventory', methods=['GET'])
+@admin_required
+def get_blood_inventory():
+    """Get comprehensive blood inventory across all blood banks"""
+    try:
+        page = request.args.get('page', 1, type=int)
+        per_page = request.args.get('per_page', 50, type=int)
+        blood_bank_id = request.args.get('blood_bank_id', type=int)
+        
+        query = BloodInventory.query
+        
+        if blood_bank_id:
+            query = query.filter_by(blood_bank_id=blood_bank_id)
+        
+        query = query.order_by(BloodInventory.blood_type, BloodInventory.expiry_date)
+        
+        pagination = query.paginate(
+            page=page,
+            per_page=per_page,
+            error_out=False
+        )
+        
+        inventory_list = []
+        for inventory in pagination.items:
+            inventory_data = serialize_model(inventory)
+            
+            # Add blood bank information
+            if inventory.blood_bank:
+                inventory_data['blood_bank'] = serialize_model(inventory.blood_bank, fields=['id', 'name', 'location'])
+                
+            inventory_list.append(inventory_data)
+        
+        # Get summary statistics
+        blood_type_summary = {}
+        total_units = 0
+        
+        for inventory in BloodInventory.query.all():
+            blood_type = inventory.blood_type
+            if blood_type not in blood_type_summary:
+                blood_type_summary[blood_type] = {
+                    'total_units': 0,
+                    'reserved_units': 0
+                }
+            
+            blood_type_summary[blood_type]['total_units'] += inventory.units
+            # Calculate reserved units from reservations
+            reserved = sum([r.quantity_units for r in inventory.reservations if r.status.value == 'approved'])
+            blood_type_summary[blood_type]['reserved_units'] += reserved
+            total_units += inventory.units
+        
+        return create_success_response(
+            'Blood inventory retrieved successfully',
+            {
+                'inventory': inventory_list,
+                'summary': {
+                    'total_units': total_units,
+                    'blood_type_summary': blood_type_summary
+                },
+                'pagination': {
+                    'page': pagination.page,
+                    'pages': pagination.pages,
+                    'per_page': pagination.per_page,
+                    'total': pagination.total,
+                    'has_next': pagination.has_next,
+                    'has_prev': pagination.has_prev
+                }
+            }
+        )
+        
+    except Exception as e:
+        return create_error_response(f'Failed to retrieve inventory: {str(e)}', status_code=500)
