@@ -317,3 +317,14 @@ def search_users():
         
     except Exception as e:
         return create_error_response(f'Search failed: {str(e)}', status_code=500)
+
+
+'''
+Routes left for testing :
+------------------------
+
+1. /profile/update
+2. /<int:user_id>
+3. /delete/<int:user_id>
+4. /update-role/<int:user_id>
+'''

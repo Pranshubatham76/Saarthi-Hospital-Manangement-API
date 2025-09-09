@@ -1,12 +1,12 @@
 {
   "summary": {
     "base_url": "http://localhost:5000",
-    "started_at": "2025-08-19T17:56:02.313014",
-    "ended_at": "2025-08-19T17:58:22.922852",
-    "duration_sec": 140.609838,
-    "passed": 60,
-    "total": 60,
-    "failed": 0
+    "started_at": "2025-09-07T07:46:30.868245",
+    "ended_at": "2025-09-07T07:48:28.966828",
+    "duration_sec": 118.098583,
+    "passed": 49,
+    "total": 51,
+    "failed": 2
   },
   "results": [
     {
@@ -25,7 +25,10 @@
           "description": "RESTful API for complete hospital management system",
           "documentation": "/api/info",
           "health_check": "/health",
+          "interactive_docs": "/api-docs",
           "name": "Hospital Management System API",
+          "swagger_json": "/swagger.json",
+          "swagger_ui": "/swagger",
           "version": "1.0.0"
         },
         "message": "Welcome to Hospital Management System API",
@@ -46,7 +49,7 @@
       "response": {
         "data": {
           "database": "connected",
-          "hospitals_count": 8,
+          "hospitals_count": 1,
           "status": "healthy"
         },
         "message": "Service is healthy",
@@ -215,17 +218,17 @@
       "note": null,
       "response": {
         "data": {
-          "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NTYyNjE3MywianRpIjoiN2Y3ZmIzOGQtZjA5OC00NTJhLTg5Y2QtMzEzOWQ3ZGFjZjhiIiwidHlwZSI6InVzZXIiLCJzdWIiOiIxNiIsIm5iZiI6MTc1NTYyNjE3MywiZXhwIjoxNzY4NTg2MTczLCJyb2xlIjoidXNlciJ9.KvqNvqYqbz6mwIn0XQMfS7hMbtTNw80gbNsNZYnWaeE",
-          "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NTYyNjE3MywianRpIjoiOWMzMWFjYWUtZWU3NC00YjFlLWI2NWEtZmIxMGJhNmJkYWFiIiwidHlwZSI6InJlZnJlc2giLCJzdWIiOiIxNiIsIm5iZiI6MTc1NTYyNjE3MywiZXhwIjoyMjU3MDQ0MjYxNzN9.LtyEtzcAx_nmc6BVh7ZExsHXzugcEaJ7JhdPhPLQEzk",
+          "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NzIzMTIwMSwianRpIjoiOTQ3ZjkzMDEtMWRhZi00MDVmLTk5ODUtMjdmZDRkNTEyM2M1IiwidHlwZSI6InVzZXIiLCJzdWIiOiIxMSIsIm5iZiI6MTc1NzIzMTIwMSwiZXhwIjoxNzcwMTkxMjAxLCJyb2xlIjoidXNlciJ9.ejDfmRf_qZAWS0qwTbx7TSusvpAM78Vc5YklEhb_084",
+          "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NzIzMTIwMSwianRpIjoiYWM4OTkyYjEtMjUzYy00NjUwLTg0ZTYtMzkyZGE2YzEwYzk3IiwidHlwZSI6InJlZnJlc2giLCJzdWIiOiIxMSIsIm5iZiI6MTc1NzIzMTIwMSwiZXhwIjoyMjU3MDYwMzEyMDF9.Mjtf2QZ3ucHumd8lCz0N_LlOATGHKU-SJUR-yVhO9I4",
           "user": {
-            "created_at": "2025-08-19 17:56:13",
-            "email": "user_1755626170_mcno@example.com",
+            "created_at": "2025-09-07 07:46:41",
+            "email": "user_1757231199_njzq@example.com",
             "fullname": "Test User",
-            "id": 16,
+            "id": 11,
             "location": null,
             "phone_num": "+10000000000",
             "role": "user",
-            "username": "user_1755626170_mcno"
+            "username": "user_1757231199_njzq"
           }
         },
         "message": "User registered successfully",
@@ -242,20 +245,20 @@
       ],
       "status_code": 200,
       "ok": true,
-      "note": "user_id=16",
+      "note": "user_id=11",
       "response": {
         "data": {
-          "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NTYyNjE3NSwianRpIjoiZWNlMmFhY2ItOGQxZC00ZjMwLWExZWQtYTExNzhiYmUzYmE2IiwidHlwZSI6InVzZXIiLCJzdWIiOiIxNiIsIm5iZiI6MTc1NTYyNjE3NSwiZXhwIjoxNzY4NTg2MTc1LCJyb2xlIjoidXNlciJ9.N1wERfeHMcSFYH9rTluWl0RQ--eJiNT5dMGtVIky__8",
-          "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NTYyNjE3NSwianRpIjoiZWUzMzFlNDYtYWYyMy00ZWViLTlmNDgtYjUxOTlmYzA2OTM0IiwidHlwZSI6InJlZnJlc2giLCJzdWIiOiIxNiIsIm5iZiI6MTc1NTYyNjE3NSwiZXhwIjoyMjU3MDQ0MjYxNzV9.aoGHRd08Wb2Kr3AJWikEMVMiwt_fuK4a5eVdZBzpimM",
+          "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NzIzMTIwNCwianRpIjoiZDBiM2ZkM2MtOWRjMC00ODFkLWFlYjktMjZiYzk5YTRlOWU5IiwidHlwZSI6InVzZXIiLCJzdWIiOiIxMSIsIm5iZiI6MTc1NzIzMTIwNCwiZXhwIjoxNzcwMTkxMjA0LCJyb2xlIjoidXNlciJ9.l-ZBoTyFWhKlB80wKMr_411F_ZTOvLN5jo2kq4SxXNM",
+          "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NzIzMTIwNCwianRpIjoiZTU4YjBmNGYtNjUzMy00YTk3LWExNWYtMDQ4MjliZjYxYTU4IiwidHlwZSI6InJlZnJlc2giLCJzdWIiOiIxMSIsIm5iZiI6MTc1NzIzMTIwNCwiZXhwIjoyMjU3MDYwMzEyMDR9.qkPW9AqeKAWMieDG-TQSq_LWJcG-lw2-UGiXdGbFCWs",
           "user": {
-            "created_at": "2025-08-19 17:56:13",
-            "email": "user_1755626170_mcno@example.com",
+            "created_at": "2025-09-07 07:46:41",
+            "email": "user_1757231199_njzq@example.com",
             "fullname": "Test User",
-            "id": 16,
+            "id": 11,
             "location": null,
             "phone_num": "+10000000000",
             "role": "user",
-            "username": "user_1755626170_mcno"
+            "username": "user_1757231199_njzq"
           }
         },
         "message": "Login successful",
@@ -275,14 +278,14 @@
       "note": "username=admin@hospital.com",
       "response": {
         "data": {
-          "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NTYyNjE3NywianRpIjoiNjA4MjU3YWQtMzc4My00MjczLWFhYjEtMTk5ZmEyNGYzMzk0IiwidHlwZSI6ImFkbWluIiwic3ViIjoiMiIsIm5iZiI6MTc1NTYyNjE3NywiZXhwIjoxNzY4NTg2MTc3LCJyb2xlIjoiYWRtaW4ifQ.3cMzCokb1fjuk2ZvCFd4PmUyhCI7HuJXa4BnoQ808kI",
+          "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NzIzMTIwNiwianRpIjoiMmIwMWNhMTEtZGMzOS00MTY5LWIzNmYtZjY2YzRiNjk5MDU4IiwidHlwZSI6ImFkbWluIiwic3ViIjoiMSIsIm5iZiI6MTc1NzIzMTIwNiwiZXhwIjoxNzcwMTkxMjA2LCJyb2xlIjoiYWRtaW4ifQ.sYOKMQLSwFT_GZjNMiCbhH30TjP0Kb0EVHnEyaWjP3I",
           "admin": {
-            "id": 2,
+            "id": 1,
             "role": "admin",
-            "timestamp": "2025-08-19 16:17:40",
+            "timestamp": "2025-08-14 08:28:16",
             "username": "admin@hospital.com"
           },
-          "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NTYyNjE3NywianRpIjoiZGI3YTlkYjAtZGJjMC00YjQzLWI1NDEtZjBiMjUyMmEwZWNhIiwidHlwZSI6InJlZnJlc2giLCJzdWIiOiIyIiwibmJmIjoxNzU1NjI2MTc3LCJleHAiOjIyNTcwNDQyNjE3N30.hd5SufD1PUyGLn__aosmh3W1LdQ5QaODhNvwBjpcJ2c"
+          "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NzIzMTIwNiwianRpIjoiNjhhNTZhNTctYzA1Yi00ZmYwLWFhMmQtZTEzMjZmYWI5OWM2IiwidHlwZSI6InJlZnJlc2giLCJzdWIiOiIxIiwibmJmIjoxNzU3MjMxMjA2LCJleHAiOjIyNTcwNjAzMTIwNn0.BTWoynRBgEBs9oOWAXaBW_DJd0jSvCAL04HQ0Qtp2-4"
         },
         "message": "Admin login successful",
         "success": true
@@ -296,28 +299,12 @@
         200,
         201
       ],
-      "status_code": 200,
-      "ok": true,
-      "note": "username=city_general",
+      "status_code": 401,
+      "ok": false,
+      "note": null,
       "response": {
-        "data": {
-          "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NTYyNjE4MCwianRpIjoiNmI1ZDJjYWUtM2IwNy00OTE0LTgwOGEtODNhZDRjMzhjMjNiIiwidHlwZSI6Imhvc3BpdGFsIiwic3ViIjoiMSIsIm5iZiI6MTc1NTYyNjE4MCwiZXhwIjoxNzY4NTg2MTgwLCJyb2xlIjoiaG9zcGl0YWxfYWRtaW4ifQ.blj-GsqrcHd5gjerHoT-Q9SYBiHjEODC9cT4tbYaBl4",
-          "hospital": {
-            "availability": "24/7",
-            "email": "info@citygeneral.com",
-            "id": 1,
-            "is_multi_level": true,
-            "location": "123 Main Street, New York, NY 10001",
-            "name": "City General Hospital",
-            "reg_id": "HOSP20240001",
-            "role": "hospital",
-            "type": "General",
-            "username": "city_general"
-          },
-          "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1NTYyNjE4MCwianRpIjoiMWExM2VkYmYtZGZlMy00NjYyLWJiNDQtMDU0NmY5NGIzZTQyIiwidHlwZSI6InJlZnJlc2giLCJzdWIiOiIxIiwibmJmIjoxNzU1NjI2MTgwLCJleHAiOjIyNTcwNDQyNjE4MH0.FiVEtsUxB6P4TqJwg9vmDqjCihX-lhvaEWprdWoY85c"
-        },
-        "message": "Hospital login successful",
-        "success": true
+        "message": "Invalid hospital credentials",
+        "success": false
       }
     },
     {
@@ -334,14 +321,14 @@
       "response": {
         "data": {
           "user": {
-            "created_at": "2025-08-19 17:56:13",
-            "email": "user_1755626170_mcno@example.com",
+            "created_at": "2025-09-07 07:46:41",
+            "email": "user_1757231199_njzq@example.com",
             "fullname": "Test User",
-            "id": 16,
+            "id": 11,
             "location": null,
             "phone_num": "+10000000000",
             "role": "user",
-            "username": "user_1755626170_mcno"
+            "username": "user_1757231199_njzq"
           }
         },
         "message": "Profile retrieved successfully",
@@ -383,168 +370,118 @@
             "page": 1,
             "pages": 1,
             "per_page": 20,
-            "total": 16
+            "total": 11
           },
           "users": [
             {
-              "created_at": "2025-08-19 17:56:13",
-              "email": "user_1755626170_mcno@example.com",
-              "fullname": "Test User",
-              "id": 16,
-              "location": null,
-              "phone_num": "+10000000000",
-              "role": "user",
-              "username": "user_1755626170_mcno"
-            },
-            {
-              "created_at": "2025-08-19 17:55:30",
-              "email": "debug_1755626128@example.com",
-              "fullname": "Debug User",
-              "id": 15,
-              "location": null,
-              "phone_num": "+1234567890",
-              "role": "user",
-              "username": "debug_user_1755626128"
-            },
-            {
-              "created_at": "2025-08-19 17:54:18",
-              "email": "debug_1755626056@example.com",
-              "fullname": "Debug User",
-              "id": 14,
-              "location": null,
-              "phone_num": "+1234567890",
-              "role": "user",
-              "username": "debug_user_1755626056"
-            },
-            {
-              "created_at": "2025-08-19 17:50:46",
-              "email": "test_1755625843@example.com",
-              "fullname": "Test User",
-              "id": 13,
-              "location": null,
-              "phone_num": "+1234567890",
-              "role": "user",
-              "username": "test_user_1755625843"
-            },
-            {
-              "created_at": "2025-08-19 17:46:11",
-              "email": "user_1755625569_tlmq@example.com",
-              "fullname": "Test User",
-              "id": 12,
-              "location": null,
-              "phone_num": "+10000000000",
-              "role": "user",
-              "username": "user_1755625569_tlmq"
-            },
-            {
-              "created_at": "2025-08-19 17:45:05",
-              "email": "user_1755625503_pmnf@example.com",
+              "created_at": "2025-09-07 07:46:41",
+              "email": "user_1757231199_njzq@example.com",
               "fullname": "Test User",
               "id": 11,
               "location": null,
               "phone_num": "+10000000000",
               "role": "user",
-              "username": "user_1755625503_pmnf"
+              "username": "user_1757231199_njzq"
             },
             {
-              "created_at": "2025-08-19 17:31:28",
-              "email": "routetest2@test.com",
-              "fullname": "Route Test User 2",
+              "created_at": "2025-09-07 07:12:08",
+              "email": "user_1757229126_xafy@example.com",
+              "fullname": "Test User",
               "id": 10,
               "location": null,
-              "phone_num": null,
+              "phone_num": "+10000000000",
               "role": "user",
-              "username": "routetest2"
+              "username": "user_1757229126_xafy"
             },
             {
-              "created_at": "2025-08-19 17:31:25",
-              "email": "routetest1@test.com",
-              "fullname": "Route Test User 1",
+              "created_at": "2025-09-07 07:01:05",
+              "email": "test_1757228462@example.com",
+              "fullname": "Test User",
               "id": 9,
               "location": null,
-              "phone_num": null,
+              "phone_num": "+1234567890",
               "role": "user",
-              "username": "routetest1"
+              "username": "test_user_1757228462"
             },
             {
-              "created_at": "2025-08-19 17:30:02",
-              "email": "debuguser@test.com",
-              "fullname": "Debug Test User",
+              "created_at": "2025-09-07 06:59:47",
+              "email": "debug_1757228385@example.com",
+              "fullname": "Debug User",
               "id": 8,
               "location": null,
-              "phone_num": null,
+              "phone_num": "+1234567890",
               "role": "user",
-              "username": "debuguser123"
+              "username": "debug_user_1757228385"
             },
             {
-              "created_at": "2025-08-19 17:26:06",
-              "email": "testcrud@example.com",
-              "fullname": "Test CRUD User",
-              "id": 7,
-              "location": null,
-              "phone_num": null,
-              "role": "user",
-              "username": "newtestuser123"
-            },
-            {
-              "created_at": "2025-08-19 16:58:52",
-              "email": "testuser3@example.com",
-              "fullname": "Test User 3",
-              "id": 6,
-              "location": "Test City 3",
-              "phone_num": "1234567892",
-              "role": "user",
-              "username": "testuser3"
-            },
-            {
-              "created_at": "2025-08-19 16:48:34",
-              "email": "testuser2@example.com",
-              "fullname": "Test User 2",
-              "id": 5,
-              "location": "Test City 2",
-              "phone_num": "1234567891",
-              "role": "user",
-              "username": "testuser2"
-            },
-            {
-              "created_at": "2025-08-19 16:48:13",
-              "email": "testuser@example.com",
-              "fullname": "Test User",
-              "id": 4,
-              "location": "Test City",
-              "phone_num": "1234567890",
-              "role": "user",
-              "username": "testuser"
-            },
-            {
-              "created_at": "2025-08-19 16:16:22",
+              "created_at": "2025-08-21 19:57:10",
               "email": "john@example.com",
               "fullname": "John Doe",
-              "id": 1,
+              "id": 7,
               "location": "New York, NY",
               "phone_num": "+1234567890",
               "role": "user",
               "username": "john_doe"
             },
             {
-              "created_at": "2025-08-19 16:16:22",
-              "email": "jane@example.com",
-              "fullname": "Jane Smith",
-              "id": 2,
-              "location": "Los Angeles, CA",
-              "phone_num": "+1234567891",
+              "created_at": "2025-08-14 12:41:24",
+              "email": "comprehensive@test.com",
+              "fullname": "Comprehensive Test User",
+              "id": 6,
+              "location": null,
+              "phone_num": "+1234567890",
               "role": "user",
-              "username": "jane_smith"
+              "username": "testuser_comprehensive"
             },
             {
-              "created_at": "2025-08-19 16:16:22",
-              "email": "wilson@hospital.com",
-              "fullname": "Dr. Robert Wilson",
-              "id": 3,
-              "location": "Chicago, IL",
+              "created_at": "2025-08-14 12:37:04",
+              "email": "testuser3@example.com",
+              "fullname": "Test User 3",
+              "id": 5,
+              "location": null,
               "phone_num": "+1234567892",
-              "role": "doctor",
-              "username": "dr_wilson"
+              "role": "user",
+              "username": "testuser3"
+            },
+            {
+              "created_at": "2025-08-14 12:32:00",
+              "email": "testuser1@example.com",
+              "fullname": "Test User 1",
+              "id": 4,
+              "location": null,
+              "phone_num": "+1234567890",
+              "role": "user",
+              "username": "testuser1"
+            },
+            {
+              "created_at": "2025-08-14 11:58:42",
+              "email": "test2@example.com",
+              "fullname": "Test User 2",
+              "id": 3,
+              "location": null,
+              "phone_num": "+1234567890",
+              "role": "user",
+              "username": "testuser2"
+            },
+            {
+              "created_at": "2025-08-14 11:51:46",
+              "email": "testsimple@example.com",
+              "fullname": "Test User Simple",
+              "id": 2,
+              "location": null,
+              "phone_num": "+1234567890",
+              "role": "user",
+              "username": "testuser_simple"
+            },
+            {
+              "created_at": "2025-08-14 11:48:04",
+              "email": "test@example.com",
+              "fullname": "Test User",
+              "id": 1,
+              "location": null,
+              "phone_num": "+1234567890",
+              "role": "user",
+              "username": "testuser"
             }
           ]
         },
@@ -566,15 +503,15 @@
       "response": {
         "data": {
           "stats": {
-            "recent_registrations": 16,
+            "recent_registrations": 11,
             "role_distribution": {
               "ambulance_driver": 0,
-              "doctor": 1,
+              "doctor": 0,
               "donor": 0,
               "hospital_admin": 0,
-              "user": 15
+              "user": 11
             },
-            "total_users": 16
+            "total_users": 11
           }
         },
         "message": "User statistics retrieved successfully",
@@ -604,10 +541,10 @@
           },
           "users": [
             {
-              "created_at": "2025-08-19 16:16:22",
+              "created_at": "2025-08-21 19:57:10",
               "email": "john@example.com",
               "fullname": "John Doe",
-              "id": 1,
+              "id": 7,
               "location": "New York, NY",
               "phone_num": "+1234567890",
               "role": "user",
@@ -634,212 +571,30 @@
         "data": {
           "hospitals": [
             {
-              "bedAvailability": 150,
-              "contact_num": "+1-555-0101",
-              "createdAt": "2025-08-19 16:16:22",
-              "email": "info@citygeneral.com",
+              "bedAvailability": 25,
+              "contact_num": "+1234567890",
+              "createdAt": "2025-08-14 12:41:46",
+              "email": "admin@finaltest.com",
               "hospital_info": {
-                "availability": "24/7",
-                "email": "info@citygeneral.com",
+                "availability": null,
+                "email": "admin@finaltest.com",
                 "id": 1,
                 "is_multi_level": true,
-                "location": "123 Main Street, New York, NY 10001",
-                "name": "City General Hospital",
-                "reg_id": "HOSP20240001",
+                "location": "123 Final St",
+                "name": "Final Test Hospital",
+                "reg_id": "HOSP20250814QL9RIN",
                 "role": "hospital",
                 "type": "General",
-                "username": "city_general"
+                "username": "finaltesthospital"
               },
               "hospital_info_id": 1,
-              "hospital_type": "Government",
+              "hospital_type": "General",
               "id": 1,
               "lastupdatedBy": null,
-              "location": "123 Main Street, New York, NY 10001",
-              "name": "City General Hospital",
+              "location": "123 Final St",
+              "name": "Final Test Hospital",
               "opd_status": "Open",
-              "oxygenUnits": 50
-            },
-            {
-              "bedAvailability": 50,
-              "contact_num": "+1-555-0103",
-              "createdAt": "2025-08-19 16:16:22",
-              "email": "info@communityclinic.com",
-              "hospital_info": {
-                "availability": "8AM-6PM",
-                "email": "info@communityclinic.com",
-                "id": 3,
-                "is_multi_level": false,
-                "location": "789 Care Street, Chicago, IL 60601",
-                "name": "Community Clinic",
-                "reg_id": "HOSP20240003",
-                "role": "hospital",
-                "type": "Clinic",
-                "username": "community_clinic"
-              },
-              "hospital_info_id": 3,
-              "hospital_type": "Private",
-              "id": 3,
-              "lastupdatedBy": null,
-              "location": "789 Care Street, Chicago, IL 60601",
-              "name": "Community Clinic",
-              "opd_status": "Limited",
-              "oxygenUnits": 20
-            },
-            {
-              "bedAvailability": 0,
-              "contact_num": null,
-              "createdAt": "2025-08-19 17:30:01",
-              "email": "debug@hospital.com",
-              "hospital_info": {
-                "availability": null,
-                "email": "debug@hospital.com",
-                "id": 6,
-                "is_multi_level": false,
-                "location": "Debug City",
-                "name": "Debug Hospital",
-                "reg_id": "HOSP20250819UN9O3Q",
-                "role": "hospital",
-                "type": "General",
-                "username": "testhospital456"
-              },
-              "hospital_info_id": 6,
-              "hospital_type": "General",
-              "id": 6,
-              "lastupdatedBy": null,
-              "location": "Debug City",
-              "name": "Debug Hospital",
-              "opd_status": "Open",
-              "oxygenUnits": 0
-            },
-            {
-              "bedAvailability": 200,
-              "contact_num": "+1-555-0102",
-              "createdAt": "2025-08-19 16:16:22",
-              "email": "info@metropmedical.com",
-              "hospital_info": {
-                "availability": "24/7",
-                "email": "info@metropmedical.com",
-                "id": 2,
-                "is_multi_level": true,
-                "location": "456 Health Ave, Los Angeles, CA 90001",
-                "name": "Metro Medical Center",
-                "reg_id": "HOSP20240002",
-                "role": "hospital",
-                "type": "Specialized",
-                "username": "metro_medical"
-              },
-              "hospital_info_id": 2,
-              "hospital_type": "Private",
-              "id": 2,
-              "lastupdatedBy": null,
-              "location": "456 Health Ave, Los Angeles, CA 90001",
-              "name": "Metro Medical Center",
-              "opd_status": "Open",
-              "oxygenUnits": 75
-            },
-            {
-              "bedAvailability": 0,
-              "contact_num": null,
-              "createdAt": "2025-08-19 17:31:35",
-              "email": "hospital1@routetest.com",
-              "hospital_info": {
-                "availability": null,
-                "email": "hospital1@routetest.com",
-                "id": 7,
-                "is_multi_level": false,
-                "location": "Route Test City 1",
-                "name": "Route Test Hospital 1",
-                "reg_id": "HOSP20250819VJTWIJ",
-                "role": "hospital",
-                "type": "General",
-                "username": "testhospital_route1"
-              },
-              "hospital_info_id": 7,
-              "hospital_type": "General",
-              "id": 7,
-              "lastupdatedBy": null,
-              "location": "Route Test City 1",
-              "name": "Route Test Hospital 1",
-              "opd_status": "Open",
-              "oxygenUnits": 0
-            },
-            {
-              "bedAvailability": 0,
-              "contact_num": null,
-              "createdAt": "2025-08-19 17:31:39",
-              "email": "hospital2@routetest.com",
-              "hospital_info": {
-                "availability": null,
-                "email": "hospital2@routetest.com",
-                "id": 8,
-                "is_multi_level": false,
-                "location": "Route Test City 2",
-                "name": "Route Test Hospital 2",
-                "reg_id": "HOSP20250819Z6FPAV",
-                "role": "hospital",
-                "type": "Specialty",
-                "username": "testhospital_route2"
-              },
-              "hospital_info_id": 8,
-              "hospital_type": "Specialty",
-              "id": 8,
-              "lastupdatedBy": null,
-              "location": "Route Test City 2",
-              "name": "Route Test Hospital 2",
-              "opd_status": "Open",
-              "oxygenUnits": 0
-            },
-            {
-              "bedAvailability": 0,
-              "contact_num": null,
-              "createdAt": "2025-08-19 17:26:05",
-              "email": "test@crudhospital.com",
-              "hospital_info": {
-                "availability": null,
-                "email": "test@crudhospital.com",
-                "id": 5,
-                "is_multi_level": false,
-                "location": "CRUD Test City",
-                "name": "Test CRUD Hospital",
-                "reg_id": "HOSP20250819A4JBCL",
-                "role": "hospital",
-                "type": "Multi-specialty",
-                "username": "testhospital123"
-              },
-              "hospital_info_id": 5,
-              "hospital_type": "Multi-specialty",
-              "id": 5,
-              "lastupdatedBy": null,
-              "location": "CRUD Test City",
-              "name": "Test CRUD Hospital",
-              "opd_status": "Open",
-              "oxygenUnits": 0
-            },
-            {
-              "bedAvailability": 0,
-              "contact_num": null,
-              "createdAt": "2025-08-19 17:07:35",
-              "email": "test@hospital.com",
-              "hospital_info": {
-                "availability": null,
-                "email": "test@hospital.com",
-                "id": 4,
-                "is_multi_level": false,
-                "location": "Test City",
-                "name": "Test Hospital",
-                "reg_id": "HOSP123456",
-                "role": "hospital",
-                "type": "General Hospital",
-                "username": "testhospital"
-              },
-              "hospital_info_id": 4,
-              "hospital_type": "General Hospital",
-              "id": 4,
-              "lastupdatedBy": null,
-              "location": "Test City",
-              "name": "Test Hospital",
-              "opd_status": "Open",
-              "oxygenUnits": 0
+              "oxygenUnits": 5
             }
           ],
           "pagination": {
@@ -848,7 +603,7 @@
             "page": 1,
             "pages": 1,
             "per_page": 20,
-            "total": 8
+            "total": 1
           }
         },
         "message": "Hospitals retrieved successfully",
@@ -869,33 +624,33 @@
       "response": {
         "data": {
           "hospital": {
-            "bedAvailability": 150,
-            "contact_num": "+1-555-0101",
-            "createdAt": "2025-08-19 16:16:22",
-            "email": "info@citygeneral.com",
-            "floor_count": 3,
+            "bedAvailability": 25,
+            "contact_num": "+1234567890",
+            "createdAt": "2025-08-14 12:41:46",
+            "email": "admin@finaltest.com",
+            "floor_count": 0,
             "hospital_info": {
-              "availability": "24/7",
-              "email": "info@citygeneral.com",
+              "availability": null,
+              "email": "admin@finaltest.com",
               "id": 1,
               "is_multi_level": true,
-              "location": "123 Main Street, New York, NY 10001",
-              "name": "City General Hospital",
-              "reg_id": "HOSP20240001",
+              "location": "123 Final St",
+              "name": "Final Test Hospital",
+              "reg_id": "HOSP20250814QL9RIN",
               "role": "hospital",
               "type": "General",
-              "username": "city_general"
+              "username": "finaltesthospital"
             },
             "hospital_info_id": 1,
-            "hospital_type": "Government",
+            "hospital_type": "General",
             "id": 1,
             "lastupdatedBy": null,
-            "location": "123 Main Street, New York, NY 10001",
-            "name": "City General Hospital",
+            "location": "123 Final St",
+            "name": "Final Test Hospital",
             "opd_status": "Open",
-            "oxygenUnits": 50,
-            "total_beds": 90,
-            "total_wards": 4
+            "oxygenUnits": 5,
+            "total_beds": 0,
+            "total_wards": 0
           }
         },
         "message": "Hospital details retrieved successfully",
@@ -915,29 +670,7 @@
       "note": null,
       "response": {
         "data": {
-          "floors": [
-            {
-              "floor_name": "First Floor",
-              "floor_number": "1",
-              "hospital_id": 1,
-              "id": 2,
-              "ward_count": 2
-            },
-            {
-              "floor_name": "Second Floor",
-              "floor_number": "2",
-              "hospital_id": 1,
-              "id": 3,
-              "ward_count": 1
-            },
-            {
-              "floor_name": "Ground Floor",
-              "floor_number": "G",
-              "hospital_id": 1,
-              "id": 1,
-              "ward_count": 1
-            }
-          ]
+          "floors": []
         },
         "message": "Hospital floors retrieved successfully",
         "success": true
@@ -956,476 +689,9 @@
       "note": null,
       "response": {
         "data": {
-          "wards": [
-            {
-              "bed_count": 30,
-              "capacity": 30,
-              "category": {
-                "description": "General ward for regular patients",
-                "id": 1,
-                "name": "General"
-              },
-              "category_id": 1,
-              "floor": {
-                "floor_name": "First Floor",
-                "floor_number": "1",
-                "hospital_id": 1,
-                "id": 2
-              },
-              "floor_id": 2,
-              "id": 2,
-              "ward_number": "101"
-            },
-            {
-              "bed_count": 15,
-              "capacity": 15,
-              "category": {
-                "description": "Intensive Care Unit",
-                "id": 2,
-                "name": "ICU"
-              },
-              "category_id": 2,
-              "floor": {
-                "floor_name": "First Floor",
-                "floor_number": "1",
-                "hospital_id": 1,
-                "id": 2
-              },
-              "floor_id": 2,
-              "id": 3,
-              "ward_number": "102"
-            },
-            {
-              "bed_count": 25,
-              "capacity": 25,
-              "category": {
-                "description": "Maternity ward",
-                "id": 4,
-                "name": "Maternity"
-              },
-              "category_id": 4,
-              "floor": {
-                "floor_name": "Second Floor",
-                "floor_number": "2",
-                "hospital_id": 1,
-                "id": 3
-              },
-              "floor_id": 3,
-              "id": 4,
-              "ward_number": "201"
-            },
-            {
-              "bed_count": 20,
-              "capacity": 20,
-              "category": {
-                "description": "Emergency department beds",
-                "id": 6,
-                "name": "Emergency"
-              },
-              "category_id": 6,
-              "floor": {
-                "floor_name": "Ground Floor",
-                "floor_number": "G",
-                "hospital_id": 1,
-                "id": 1
-              },
-              "floor_id": 1,
-              "id": 1,
-              "ward_number": "G01"
-            }
-          ]
+          "wards": []
         },
         "message": "Hospital wards retrieved successfully",
-        "success": true
-      }
-    },
-    {
-      "name": "hospital:get_ward",
-      "method": "GET",
-      "url": "http://localhost:5000/hospital/ward/2",
-      "expected": [
-        200,
-        201
-      ],
-      "status_code": 200,
-      "ok": true,
-      "note": null,
-      "response": {
-        "data": {
-          "ward": {
-            "available_beds": 10,
-            "bed_count": 30,
-            "capacity": 30,
-            "category": {
-              "description": "General ward for regular patients",
-              "id": 1,
-              "name": "General"
-            },
-            "category_id": 1,
-            "floor": {
-              "floor_name": "First Floor",
-              "floor_number": "1",
-              "hospital_id": 1,
-              "id": 2
-            },
-            "floor_id": 2,
-            "id": 2,
-            "occupied_beds": 9,
-            "ward_number": "101"
-          }
-        },
-        "message": "Ward details retrieved successfully",
-        "success": true
-      }
-    },
-    {
-      "name": "hospital:ward_beds",
-      "method": "GET",
-      "url": "http://localhost:5000/hospital/ward/2/beds",
-      "expected": [
-        200,
-        201
-      ],
-      "status_code": 200,
-      "ok": true,
-      "note": null,
-      "response": {
-        "data": {
-          "beds": [
-            {
-              "bed_number": "101-01",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 21,
-              "status": "maintenance",
-              "updated_at": "2025-08-19 17:46:54",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-02",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 22,
-              "status": "reserved",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-03",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 23,
-              "status": "vacant",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-04",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 24,
-              "status": "occupied",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-05",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 25,
-              "status": "reserved",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-06",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 26,
-              "status": "vacant",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-07",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 27,
-              "status": "occupied",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-08",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 28,
-              "status": "reserved",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-09",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 29,
-              "status": "vacant",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-10",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 30,
-              "status": "occupied",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-11",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 31,
-              "status": "reserved",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-12",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 32,
-              "status": "vacant",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-13",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 33,
-              "status": "occupied",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-14",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 34,
-              "status": "reserved",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-15",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 35,
-              "status": "vacant",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-16",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 36,
-              "status": "occupied",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-17",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 37,
-              "status": "reserved",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-18",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 38,
-              "status": "vacant",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-19",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 39,
-              "status": "occupied",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-20",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 40,
-              "status": "reserved",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-21",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 41,
-              "status": "vacant",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-22",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 42,
-              "status": "occupied",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-23",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 43,
-              "status": "reserved",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-24",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 44,
-              "status": "vacant",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-25",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 45,
-              "status": "occupied",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-26",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 46,
-              "status": "reserved",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-27",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 47,
-              "status": "vacant",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-28",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 48,
-              "status": "occupied",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-29",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 49,
-              "status": "reserved",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            },
-            {
-              "bed_number": "101-30",
-              "bed_type": "General",
-              "created_at": "2025-08-19 16:16:22",
-              "id": 50,
-              "status": "vacant",
-              "updated_at": "2025-08-19 16:16:22",
-              "ward_id": 2
-            }
-          ]
-        },
-        "message": "Ward beds retrieved successfully",
-        "success": true
-      }
-    },
-    {
-      "name": "hospital:get_bed",
-      "method": "GET",
-      "url": "http://localhost:5000/hospital/bed/21",
-      "expected": [
-        200,
-        201
-      ],
-      "status_code": 200,
-      "ok": true,
-      "note": null,
-      "response": {
-        "data": {
-          "bed": {
-            "bed_number": "101-01",
-            "bed_type": "General",
-            "created_at": "2025-08-19 16:16:22",
-            "id": 21,
-            "status": "maintenance",
-            "updated_at": "2025-08-19 17:46:54",
-            "ward": {
-              "capacity": 30,
-              "category_id": 1,
-              "floor_id": 2,
-              "id": 2,
-              "ward_number": "101"
-            },
-            "ward_id": 2
-          }
-        },
-        "message": "Bed details retrieved successfully",
-        "success": true
-      }
-    },
-    {
-      "name": "hospital:update_bed",
-      "method": "PUT",
-      "url": "http://localhost:5000/hospital/bed/update/21",
-      "expected": [
-        200,
-        201
-      ],
-      "status_code": 200,
-      "ok": true,
-      "note": null,
-      "response": {
-        "data": {
-          "bed": {
-            "bed_number": "101-01",
-            "bed_type": "General",
-            "created_at": "2025-08-19 16:16:22",
-            "id": 21,
-            "status": "maintenance",
-            "updated_at": "2025-08-19 17:46:54",
-            "ward_id": 2
-          }
-        },
-        "message": "Bed updated successfully",
         "success": true
       }
     },
@@ -1444,36 +710,12 @@
         "data": {
           "doctors": [
             {
-              "availability": "Mon-Fri 8AM-3PM",
-              "id": 4,
-              "mail": "david.wilson@citygeneral.com",
-              "name": "Dr. David Wilson",
-              "phone": "+1-555-0204",
-              "specialisation": "Orthopedics"
-            },
-            {
-              "availability": "Tue-Thu 10AM-6PM",
-              "id": 3,
-              "mail": "emily.davis@communityclinic.com",
-              "name": "Dr. Emily Davis",
-              "phone": "+1-555-0203",
-              "specialisation": "General Medicine"
-            },
-            {
-              "availability": "Mon-Sat 8AM-4PM",
-              "id": 2,
-              "mail": "michael.brown@metropmedical.com",
-              "name": "Dr. Michael Brown",
-              "phone": "+1-555-0202",
-              "specialisation": "Pediatrics"
-            },
-            {
-              "availability": "Mon-Fri 9AM-5PM",
+              "availability": null,
               "id": 1,
-              "mail": "sarah.johnson@citygeneral.com",
-              "name": "Dr. Sarah Johnson",
-              "phone": "+1-555-0201",
-              "specialisation": "Cardiology"
+              "mail": "doc_1757229165_yzfu@example.com",
+              "name": "Dr. Test",
+              "phone": null,
+              "specialisation": "General"
             }
           ],
           "pagination": {
@@ -1482,7 +724,7 @@
             "page": 1,
             "pages": 1,
             "per_page": 20,
-            "total": 4
+            "total": 1
           }
         },
         "message": "Doctors retrieved successfully",
@@ -1492,7 +734,7 @@
     {
       "name": "doctor:get",
       "method": "GET",
-      "url": "http://localhost:5000/doctor/4",
+      "url": "http://localhost:5000/doctor/1",
       "expected": [
         200,
         201
@@ -1503,28 +745,13 @@
       "response": {
         "data": {
           "doctor": {
-            "availability": "Mon-Fri 8AM-3PM",
-            "hospitals": [
-              {
-                "bedAvailability": 150,
-                "contact_num": "+1-555-0101",
-                "createdAt": "2025-08-19 16:16:22",
-                "email": "info@citygeneral.com",
-                "hospital_info_id": 1,
-                "hospital_type": "Government",
-                "id": 1,
-                "lastupdatedBy": null,
-                "location": "123 Main Street, New York, NY 10001",
-                "name": "City General Hospital",
-                "opd_status": "Open",
-                "oxygenUnits": 50
-              }
-            ],
-            "id": 4,
-            "mail": "david.wilson@citygeneral.com",
-            "name": "Dr. David Wilson",
-            "phone": "+1-555-0204",
-            "specialisation": "Orthopedics"
+            "availability": null,
+            "hospitals": [],
+            "id": 1,
+            "mail": "doc_1757229165_yzfu@example.com",
+            "name": "Dr. Test",
+            "phone": null,
+            "specialisation": "General"
           }
         },
         "message": "Doctor details retrieved successfully",
@@ -1534,7 +761,7 @@
     {
       "name": "doctor:schedule",
       "method": "GET",
-      "url": "http://localhost:5000/doctor/4/schedule",
+      "url": "http://localhost:5000/doctor/1/schedule",
       "expected": [
         200,
         201
@@ -1547,21 +774,21 @@
           "schedules": [
             {
               "day_of_week": null,
-              "doctor_id": 4,
+              "doctor_id": 1,
               "end_time": null,
               "hospital": {
-                "bedAvailability": 150,
-                "contact_num": "+1-555-0101",
-                "createdAt": "2025-08-19 16:16:22",
-                "email": "info@citygeneral.com",
+                "bedAvailability": 25,
+                "contact_num": "+1234567890",
+                "createdAt": "2025-08-14 12:41:46",
+                "email": "admin@finaltest.com",
                 "hospital_info_id": 1,
-                "hospital_type": "Government",
+                "hospital_type": "General",
                 "id": 1,
                 "lastupdatedBy": null,
-                "location": "123 Main Street, New York, NY 10001",
-                "name": "City General Hospital",
+                "location": "123 Final St",
+                "name": "Final Test Hospital",
                 "opd_status": "Open",
-                "oxygenUnits": 50
+                "oxygenUnits": 5
               },
               "hospital_id": 1,
               "id": 1,
@@ -1590,7 +817,7 @@
         "data": {
           "schedule": {
             "day_of_week": null,
-            "doctor_id": 4,
+            "doctor_id": 1,
             "end_time": null,
             "hospital_id": 1,
             "id": 2,
@@ -1616,1744 +843,9 @@
       "note": null,
       "response": {
         "data": {
-          "slots": [
-            {
-              "available_capacity": 2,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 10,
-              "occupancy": 1,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250820002",
-              "slot_end": "2025-08-20 10:00:00",
-              "slot_start": "2025-08-20 09:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 11,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250820003",
-              "slot_end": "2025-08-20 10:30:00",
-              "slot_start": "2025-08-20 10:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 12,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250820004",
-              "slot_end": "2025-08-20 11:00:00",
-              "slot_start": "2025-08-20 10:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 13,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250820005",
-              "slot_end": "2025-08-20 11:30:00",
-              "slot_start": "2025-08-20 11:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 14,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250820006",
-              "slot_end": "2025-08-20 12:00:00",
-              "slot_start": "2025-08-20 11:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 15,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250820007",
-              "slot_end": "2025-08-20 12:30:00",
-              "slot_start": "2025-08-20 12:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 16,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250820008",
-              "slot_end": "2025-08-20 13:00:00",
-              "slot_start": "2025-08-20 12:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 17,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250821001",
-              "slot_end": "2025-08-21 09:30:00",
-              "slot_start": "2025-08-21 09:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 18,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250821002",
-              "slot_end": "2025-08-21 10:00:00",
-              "slot_start": "2025-08-21 09:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 19,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250821003",
-              "slot_end": "2025-08-21 10:30:00",
-              "slot_start": "2025-08-21 10:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 20,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250821004",
-              "slot_end": "2025-08-21 11:00:00",
-              "slot_start": "2025-08-21 10:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 21,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250821005",
-              "slot_end": "2025-08-21 11:30:00",
-              "slot_start": "2025-08-21 11:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 22,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250821006",
-              "slot_end": "2025-08-21 12:00:00",
-              "slot_start": "2025-08-21 11:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 23,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250821007",
-              "slot_end": "2025-08-21 12:30:00",
-              "slot_start": "2025-08-21 12:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 24,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250821008",
-              "slot_end": "2025-08-21 13:00:00",
-              "slot_start": "2025-08-21 12:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 25,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250822001",
-              "slot_end": "2025-08-22 09:30:00",
-              "slot_start": "2025-08-22 09:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 26,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250822002",
-              "slot_end": "2025-08-22 10:00:00",
-              "slot_start": "2025-08-22 09:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 27,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250822003",
-              "slot_end": "2025-08-22 10:30:00",
-              "slot_start": "2025-08-22 10:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 28,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250822004",
-              "slot_end": "2025-08-22 11:00:00",
-              "slot_start": "2025-08-22 10:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 29,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250822005",
-              "slot_end": "2025-08-22 11:30:00",
-              "slot_start": "2025-08-22 11:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 30,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250822006",
-              "slot_end": "2025-08-22 12:00:00",
-              "slot_start": "2025-08-22 11:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 31,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250822007",
-              "slot_end": "2025-08-22 12:30:00",
-              "slot_start": "2025-08-22 12:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 32,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250822008",
-              "slot_end": "2025-08-22 13:00:00",
-              "slot_start": "2025-08-22 12:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 33,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250823001",
-              "slot_end": "2025-08-23 09:30:00",
-              "slot_start": "2025-08-23 09:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 34,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250823002",
-              "slot_end": "2025-08-23 10:00:00",
-              "slot_start": "2025-08-23 09:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 35,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250823003",
-              "slot_end": "2025-08-23 10:30:00",
-              "slot_start": "2025-08-23 10:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 36,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250823004",
-              "slot_end": "2025-08-23 11:00:00",
-              "slot_start": "2025-08-23 10:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 37,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250823005",
-              "slot_end": "2025-08-23 11:30:00",
-              "slot_start": "2025-08-23 11:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 38,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250823006",
-              "slot_end": "2025-08-23 12:00:00",
-              "slot_start": "2025-08-23 11:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 39,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250823007",
-              "slot_end": "2025-08-23 12:30:00",
-              "slot_start": "2025-08-23 12:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 40,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250823008",
-              "slot_end": "2025-08-23 13:00:00",
-              "slot_start": "2025-08-23 12:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 41,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250824001",
-              "slot_end": "2025-08-24 09:30:00",
-              "slot_start": "2025-08-24 09:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 42,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250824002",
-              "slot_end": "2025-08-24 10:00:00",
-              "slot_start": "2025-08-24 09:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 43,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250824003",
-              "slot_end": "2025-08-24 10:30:00",
-              "slot_start": "2025-08-24 10:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 44,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250824004",
-              "slot_end": "2025-08-24 11:00:00",
-              "slot_start": "2025-08-24 10:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 45,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250824005",
-              "slot_end": "2025-08-24 11:30:00",
-              "slot_start": "2025-08-24 11:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 46,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250824006",
-              "slot_end": "2025-08-24 12:00:00",
-              "slot_start": "2025-08-24 11:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 47,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250824007",
-              "slot_end": "2025-08-24 12:30:00",
-              "slot_start": "2025-08-24 12:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 48,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250824008",
-              "slot_end": "2025-08-24 13:00:00",
-              "slot_start": "2025-08-24 12:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 49,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250825001",
-              "slot_end": "2025-08-25 09:30:00",
-              "slot_start": "2025-08-25 09:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 50,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250825002",
-              "slot_end": "2025-08-25 10:00:00",
-              "slot_start": "2025-08-25 09:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 51,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250825003",
-              "slot_end": "2025-08-25 10:30:00",
-              "slot_start": "2025-08-25 10:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 52,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250825004",
-              "slot_end": "2025-08-25 11:00:00",
-              "slot_start": "2025-08-25 10:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 53,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250825005",
-              "slot_end": "2025-08-25 11:30:00",
-              "slot_start": "2025-08-25 11:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 54,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250825006",
-              "slot_end": "2025-08-25 12:00:00",
-              "slot_start": "2025-08-25 11:30:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 55,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250825007",
-              "slot_end": "2025-08-25 12:30:00",
-              "slot_start": "2025-08-25 12:00:00"
-            },
-            {
-              "available_capacity": 3,
-              "capacity": 3,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 56,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250825008",
-              "slot_end": "2025-08-25 13:00:00",
-              "slot_start": "2025-08-25 12:30:00"
-            },
-            {
-              "available_capacity": 10,
-              "capacity": 10,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 225,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "OPD_1_DR_1_20250826_0900",
-              "slot_end": "2025-08-26 10:00:00",
-              "slot_start": "2025-08-26 09:00:00"
-            },
-            {
-              "available_capacity": 10,
-              "capacity": 10,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 226,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "OPD_1_DR_1_20250826_1000",
-              "slot_end": "2025-08-26 11:00:00",
-              "slot_start": "2025-08-26 10:00:00"
-            },
-            {
-              "available_capacity": 10,
-              "capacity": 10,
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "id": 227,
-              "occupancy": 0,
-              "opd": {
-                "department": "Cardiology",
-                "description": "Cardiac care and consultation",
-                "from_day": "Monday",
-                "from_timing": "09:00:00",
-                "hospital_id": 1,
-                "id": 1,
-                "shift": "Morning",
-                "to_day": "Friday",
-                "to_timing": "13:00:00"
-              },
-              "opd_id": 1,
-              "opd_slot_id": "OPD_1_DR_1_20250826_1100",
-              "slot_end": "2025-08-26 12:00:00",
-              "slot_start": "2025-08-26 11:00:00"
-            }
-          ]
+          "slots": []
         },
         "message": "Available slots retrieved successfully",
-        "success": true
-      }
-    },
-    {
-      "name": "appointment:book",
-      "method": "POST",
-      "url": "http://localhost:5000/appointment/opd/book",
-      "expected": [
-        201
-      ],
-      "status_code": 201,
-      "ok": true,
-      "note": null,
-      "response": {
-        "data": {
-          "appointment": {
-            "appointment_type": "opd",
-            "booked_by_user_id": 16,
-            "created_at": "2025-08-19 17:57:12",
-            "doctor": {
-              "availability": "Mon-Fri 9AM-5PM",
-              "id": 1,
-              "mail": "sarah.johnson@citygeneral.com",
-              "name": "Dr. Sarah Johnson",
-              "phone": "+1-555-0201",
-              "specialisation": "Cardiology"
-            },
-            "doctor_id": 1,
-            "hospital": {
-              "bedAvailability": 150,
-              "contact_num": "+1-555-0101",
-              "createdAt": "2025-08-19 16:16:22",
-              "email": "info@citygeneral.com",
-              "hospital_info_id": 1,
-              "hospital_type": "Government",
-              "id": 1,
-              "lastupdatedBy": null,
-              "location": "123 Main Street, New York, NY 10001",
-              "name": "City General Hospital",
-              "opd_status": "Open",
-              "oxygenUnits": 50
-            },
-            "hospital_id": 1,
-            "id": 6,
-            "patient": {
-              "created_at": "2025-08-19 17:56:13",
-              "email": "user_1755626170_mcno@example.com",
-              "fullname": "Test User",
-              "id": 16,
-              "location": null,
-              "phone_num": "+10000000000",
-              "role": "user",
-              "username": "user_1755626170_mcno"
-            },
-            "patient_id": 16,
-            "reason": "Test visit",
-            "scheduled_time": "2025-08-20 09:30:00",
-            "slot": {
-              "capacity": 3,
-              "doctor_id": 1,
-              "id": 10,
-              "occupancy": 2,
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250820002",
-              "slot_end": "2025-08-20 10:00:00",
-              "slot_start": "2025-08-20 09:30:00"
-            },
-            "slot_id": 10,
-            "status": "confirmed"
-          }
-        },
-        "message": "OPD appointment booked successfully",
-        "success": true
-      }
-    },
-    {
-      "name": "appointment:my",
-      "method": "GET",
-      "url": "http://localhost:5000/appointment/my-appointments",
-      "expected": [
-        200,
-        201
-      ],
-      "status_code": 200,
-      "ok": true,
-      "note": null,
-      "response": {
-        "data": {
-          "appointments": [
-            {
-              "appointment_type": "opd",
-              "booked_by_user_id": 16,
-              "created_at": "2025-08-19 17:57:12",
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "hospital": {
-                "bedAvailability": 150,
-                "contact_num": "+1-555-0101",
-                "createdAt": "2025-08-19 16:16:22",
-                "email": "info@citygeneral.com",
-                "hospital_info_id": 1,
-                "hospital_type": "Government",
-                "id": 1,
-                "lastupdatedBy": null,
-                "location": "123 Main Street, New York, NY 10001",
-                "name": "City General Hospital",
-                "opd_status": "Open",
-                "oxygenUnits": 50
-              },
-              "hospital_id": 1,
-              "id": 6,
-              "patient_id": 16,
-              "reason": "Test visit",
-              "scheduled_time": "2025-08-20 09:30:00",
-              "slot": {
-                "capacity": 3,
-                "doctor_id": 1,
-                "id": 10,
-                "occupancy": 2,
-                "opd_id": 1,
-                "opd_slot_id": "CAR20250820002",
-                "slot_end": "2025-08-20 10:00:00",
-                "slot_start": "2025-08-20 09:30:00"
-              },
-              "slot_id": 10,
-              "status": "confirmed"
-            }
-          ],
-          "pagination": {
-            "has_next": false,
-            "has_prev": false,
-            "page": 1,
-            "pages": 1,
-            "per_page": 10,
-            "total": 1
-          }
-        },
-        "message": "Appointments retrieved successfully",
-        "success": true
-      }
-    },
-    {
-      "name": "appointment:get",
-      "method": "GET",
-      "url": "http://localhost:5000/appointment/opd/6",
-      "expected": [
-        200,
-        201
-      ],
-      "status_code": 200,
-      "ok": true,
-      "note": null,
-      "response": {
-        "data": {
-          "appointment": {
-            "appointment_type": "opd",
-            "booked_by_user_id": 16,
-            "created_at": "2025-08-19 17:57:12",
-            "doctor": {
-              "availability": "Mon-Fri 9AM-5PM",
-              "id": 1,
-              "mail": "sarah.johnson@citygeneral.com",
-              "name": "Dr. Sarah Johnson",
-              "phone": "+1-555-0201",
-              "specialisation": "Cardiology"
-            },
-            "doctor_id": 1,
-            "hospital": {
-              "bedAvailability": 150,
-              "contact_num": "+1-555-0101",
-              "createdAt": "2025-08-19 16:16:22",
-              "email": "info@citygeneral.com",
-              "hospital_info_id": 1,
-              "hospital_type": "Government",
-              "id": 1,
-              "lastupdatedBy": null,
-              "location": "123 Main Street, New York, NY 10001",
-              "name": "City General Hospital",
-              "opd_status": "Open",
-              "oxygenUnits": 50
-            },
-            "hospital_id": 1,
-            "id": 6,
-            "patient": {
-              "created_at": "2025-08-19 17:56:13",
-              "email": "user_1755626170_mcno@example.com",
-              "fullname": "Test User",
-              "id": 16,
-              "location": null,
-              "phone_num": "+10000000000",
-              "role": "user",
-              "username": "user_1755626170_mcno"
-            },
-            "patient_id": 16,
-            "reason": "Test visit",
-            "scheduled_time": "2025-08-20 09:30:00",
-            "slot": {
-              "capacity": 3,
-              "doctor_id": 1,
-              "id": 10,
-              "occupancy": 2,
-              "opd_id": 1,
-              "opd_slot_id": "CAR20250820002",
-              "slot_end": "2025-08-20 10:00:00",
-              "slot_start": "2025-08-20 09:30:00"
-            },
-            "slot_id": 10,
-            "status": "confirmed"
-          }
-        },
-        "message": "Appointment details retrieved successfully",
-        "success": true
-      }
-    },
-    {
-      "name": "appointment:cancel",
-      "method": "DELETE",
-      "url": "http://localhost:5000/appointment/opd/cancel/6",
-      "expected": [
-        200,
-        201
-      ],
-      "status_code": 200,
-      "ok": true,
-      "note": null,
-      "response": {
-        "message": "Appointment cancelled successfully",
         "success": true
       }
     },
@@ -3370,261 +862,14 @@
       "note": null,
       "response": {
         "data": {
-          "appointments": [
-            {
-              "appointment_type": "opd",
-              "booked_by_user_id": 5,
-              "created_at": "2025-08-19 17:20:11",
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "hospital_id": 1,
-              "id": 1,
-              "patient": {
-                "created_at": "2025-08-19 16:48:34",
-                "email": "testuser2@example.com",
-                "fullname": "Test User 2",
-                "id": 5,
-                "location": "Test City 2",
-                "phone_num": "1234567891",
-                "role": "user",
-                "username": "testuser2"
-              },
-              "patient_id": 5,
-              "reason": "CRUD test appointment",
-              "scheduled_time": "2025-08-20 09:00:00",
-              "slot": {
-                "capacity": 3,
-                "doctor_id": 1,
-                "id": 9,
-                "occupancy": 3,
-                "opd_id": 1,
-                "opd_slot_id": "CAR20250820001",
-                "slot_end": "2025-08-20 09:30:00",
-                "slot_start": "2025-08-20 09:00:00"
-              },
-              "slot_id": 9,
-              "status": "confirmed"
-            },
-            {
-              "appointment_type": "opd",
-              "booked_by_user_id": 12,
-              "created_at": "2025-08-19 17:47:11",
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "hospital_id": 1,
-              "id": 3,
-              "patient": {
-                "created_at": "2025-08-19 17:46:11",
-                "email": "user_1755625569_tlmq@example.com",
-                "fullname": "Test User",
-                "id": 12,
-                "location": null,
-                "phone_num": "+10000000000",
-                "role": "user",
-                "username": "user_1755625569_tlmq"
-              },
-              "patient_id": 12,
-              "reason": "Test visit",
-              "scheduled_time": "2025-08-20 09:00:00",
-              "slot": {
-                "capacity": 3,
-                "doctor_id": 1,
-                "id": 9,
-                "occupancy": 3,
-                "opd_id": 1,
-                "opd_slot_id": "CAR20250820001",
-                "slot_end": "2025-08-20 09:30:00",
-                "slot_start": "2025-08-20 09:00:00"
-              },
-              "slot_id": 9,
-              "status": "confirmed"
-            },
-            {
-              "appointment_type": "opd",
-              "booked_by_user_id": 14,
-              "created_at": "2025-08-19 17:54:24",
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "hospital_id": 1,
-              "id": 4,
-              "patient": {
-                "created_at": "2025-08-19 17:54:18",
-                "email": "debug_1755626056@example.com",
-                "fullname": "Debug User",
-                "id": 14,
-                "location": null,
-                "phone_num": "+1234567890",
-                "role": "user",
-                "username": "debug_user_1755626056"
-              },
-              "patient_id": 14,
-              "reason": "Debug test appointment",
-              "scheduled_time": "2025-08-20 09:00:00",
-              "slot": {
-                "capacity": 3,
-                "doctor_id": 1,
-                "id": 9,
-                "occupancy": 3,
-                "opd_id": 1,
-                "opd_slot_id": "CAR20250820001",
-                "slot_end": "2025-08-20 09:30:00",
-                "slot_start": "2025-08-20 09:00:00"
-              },
-              "slot_id": 9,
-              "status": "confirmed"
-            },
-            {
-              "appointment_type": "opd",
-              "booked_by_user_id": 5,
-              "created_at": "2025-08-19 17:36:42",
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "hospital_id": 1,
-              "id": 2,
-              "patient": {
-                "created_at": "2025-08-19 16:48:34",
-                "email": "testuser2@example.com",
-                "fullname": "Test User 2",
-                "id": 5,
-                "location": "Test City 2",
-                "phone_num": "1234567891",
-                "role": "user",
-                "username": "testuser2"
-              },
-              "patient_id": 5,
-              "reason": "Fixed route test appointment",
-              "scheduled_time": "2025-08-20 09:30:00",
-              "slot": {
-                "capacity": 3,
-                "doctor_id": 1,
-                "id": 10,
-                "occupancy": 1,
-                "opd_id": 1,
-                "opd_slot_id": "CAR20250820002",
-                "slot_end": "2025-08-20 10:00:00",
-                "slot_start": "2025-08-20 09:30:00"
-              },
-              "slot_id": 10,
-              "status": "confirmed"
-            },
-            {
-              "appointment_type": "opd",
-              "booked_by_user_id": 15,
-              "created_at": "2025-08-19 17:55:37",
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "hospital_id": 1,
-              "id": 5,
-              "patient": {
-                "created_at": "2025-08-19 17:55:30",
-                "email": "debug_1755626128@example.com",
-                "fullname": "Debug User",
-                "id": 15,
-                "location": null,
-                "phone_num": "+1234567890",
-                "role": "user",
-                "username": "debug_user_1755626128"
-              },
-              "patient_id": 15,
-              "reason": "Debug test appointment",
-              "scheduled_time": "2025-08-20 09:30:00",
-              "slot": {
-                "capacity": 3,
-                "doctor_id": 1,
-                "id": 10,
-                "occupancy": 1,
-                "opd_id": 1,
-                "opd_slot_id": "CAR20250820002",
-                "slot_end": "2025-08-20 10:00:00",
-                "slot_start": "2025-08-20 09:30:00"
-              },
-              "slot_id": 10,
-              "status": "cancelled"
-            },
-            {
-              "appointment_type": "opd",
-              "booked_by_user_id": 16,
-              "created_at": "2025-08-19 17:57:12",
-              "doctor": {
-                "availability": "Mon-Fri 9AM-5PM",
-                "id": 1,
-                "mail": "sarah.johnson@citygeneral.com",
-                "name": "Dr. Sarah Johnson",
-                "phone": "+1-555-0201",
-                "specialisation": "Cardiology"
-              },
-              "doctor_id": 1,
-              "hospital_id": 1,
-              "id": 6,
-              "patient": {
-                "created_at": "2025-08-19 17:56:13",
-                "email": "user_1755626170_mcno@example.com",
-                "fullname": "Test User",
-                "id": 16,
-                "location": null,
-                "phone_num": "+10000000000",
-                "role": "user",
-                "username": "user_1755626170_mcno"
-              },
-              "patient_id": 16,
-              "reason": "Test visit",
-              "scheduled_time": "2025-08-20 09:30:00",
-              "slot": {
-                "capacity": 3,
-                "doctor_id": 1,
-                "id": 10,
-                "occupancy": 1,
-                "opd_id": 1,
-                "opd_slot_id": "CAR20250820002",
-                "slot_end": "2025-08-20 10:00:00",
-                "slot_start": "2025-08-20 09:30:00"
-              },
-              "slot_id": 10,
-              "status": "cancelled"
-            }
-          ],
+          "appointments": [],
           "pagination": {
             "has_next": false,
             "has_prev": false,
             "page": 1,
-            "pages": 1,
+            "pages": 0,
             "per_page": 20,
-            "total": 6
+            "total": 0
           }
         },
         "message": "Hospital appointments retrieved successfully",
@@ -3644,234 +889,17 @@
       "note": null,
       "response": {
         "data": {
-          "blood_banks": [
-            {
-              "blood_types_available": [
-                "A+",
-                "A-",
-                "B+",
-                "B-",
-                "AB+",
-                "AB-",
-                "O+",
-                "O-"
-              ],
-              "category": "Government",
-              "contact_no": "+1-555-0301",
-              "email": "info@centralbloodbank.org",
-              "id": 1,
-              "location": "100 Blood Drive, New York, NY 10001",
-              "name": "Central Blood Bank",
-              "role": "bloodbank",
-              "stock_levels": {
-                "A+": 50,
-                "A-": 30,
-                "AB+": 20,
-                "AB-": 15,
-                "B+": 40,
-                "B-": 25,
-                "O+": 60,
-                "O-": 45
-              },
-              "updatedAt": "2025-08-19 16:16:25"
-            },
-            {
-              "blood_types_available": [
-                "A+",
-                "B+",
-                "O+"
-              ],
-              "category": null,
-              "contact_no": "555-FIXED-ROUTE",
-              "email": "fixedroute@bloodbank.com",
-              "id": 4,
-              "location": "Fixed Route City",
-              "name": "Fixed Route Blood Bank",
-              "role": "bloodbank",
-              "stock_levels": {
-                "A+": 100,
-                "B+": 50,
-                "O+": 200
-              },
-              "updatedAt": "2025-08-19 17:36:34"
-            },
-            {
-              "blood_types_available": [
-                "A+",
-                "B+",
-                "AB+",
-                "O+",
-                "O-"
-              ],
-              "category": "Private",
-              "contact_no": "+1-555-0302",
-              "email": "contact@metroblood.org",
-              "id": 2,
-              "location": "200 Donation Ave, Los Angeles, CA 90001",
-              "name": "Metro Blood Services",
-              "role": "bloodbank",
-              "stock_levels": {
-                "A+": 35,
-                "AB+": 15,
-                "B+": 30,
-                "O+": 40,
-                "O-": 25
-              },
-              "updatedAt": "2025-08-19 16:16:25"
-            },
-            {
-              "blood_types_available": [],
-              "category": null,
-              "contact_no": "123-456-7890",
-              "email": "testbb@example.com",
-              "id": 3,
-              "location": "Test City",
-              "name": "Test Blood Bank",
-              "role": "bloodbank",
-              "stock_levels": {},
-              "updatedAt": "2025-08-19 17:08:30"
-            }
-          ],
+          "blood_banks": [],
           "pagination": {
             "has_next": false,
             "has_prev": false,
             "page": 1,
-            "pages": 1,
+            "pages": 0,
             "per_page": 20,
-            "total": 4
+            "total": 0
           }
         },
         "message": "Blood banks retrieved successfully",
-        "success": true
-      }
-    },
-    {
-      "name": "bloodbank:stock",
-      "method": "GET",
-      "url": "http://localhost:5000/bloodbank/1/stock",
-      "expected": [
-        200,
-        201
-      ],
-      "status_code": 200,
-      "ok": true,
-      "note": null,
-      "response": {
-        "data": {
-          "blood_bank": {
-            "blood_types_available": [
-              "A+",
-              "A-",
-              "B+",
-              "B-",
-              "AB+",
-              "AB-",
-              "O+",
-              "O-"
-            ],
-            "category": "Government",
-            "contact_no": "+1-555-0301",
-            "email": "info@centralbloodbank.org",
-            "id": 1,
-            "inventories": [
-              {
-                "blood_type": "A+",
-                "bloodbank_id": 1,
-                "created_at": "2025-08-19 16:16:26",
-                "expiry_date": "00:00:00",
-                "id": 1,
-                "last_updated": "2025-08-19 16:16:26",
-                "lot_number": "LOT1AP202508",
-                "units": 50
-              },
-              {
-                "blood_type": "A-",
-                "bloodbank_id": 1,
-                "created_at": "2025-08-19 16:16:26",
-                "expiry_date": "00:00:00",
-                "id": 2,
-                "last_updated": "2025-08-19 16:16:26",
-                "lot_number": "LOT1AN202508",
-                "units": 30
-              },
-              {
-                "blood_type": "AB+",
-                "bloodbank_id": 1,
-                "created_at": "2025-08-19 16:16:26",
-                "expiry_date": "00:00:00",
-                "id": 5,
-                "last_updated": "2025-08-19 16:16:26",
-                "lot_number": "LOT1ABP202508",
-                "units": 20
-              },
-              {
-                "blood_type": "AB-",
-                "bloodbank_id": 1,
-                "created_at": "2025-08-19 16:16:26",
-                "expiry_date": "00:00:00",
-                "id": 6,
-                "last_updated": "2025-08-19 16:16:26",
-                "lot_number": "LOT1ABN202508",
-                "units": 15
-              },
-              {
-                "blood_type": "B+",
-                "bloodbank_id": 1,
-                "created_at": "2025-08-19 16:16:26",
-                "expiry_date": "00:00:00",
-                "id": 3,
-                "last_updated": "2025-08-19 16:16:26",
-                "lot_number": "LOT1BP202508",
-                "units": 40
-              },
-              {
-                "blood_type": "B-",
-                "bloodbank_id": 1,
-                "created_at": "2025-08-19 16:16:26",
-                "expiry_date": "00:00:00",
-                "id": 4,
-                "last_updated": "2025-08-19 16:16:26",
-                "lot_number": "LOT1BN202508",
-                "units": 25
-              },
-              {
-                "blood_type": "O+",
-                "bloodbank_id": 1,
-                "created_at": "2025-08-19 16:16:26",
-                "expiry_date": "00:00:00",
-                "id": 7,
-                "last_updated": "2025-08-19 16:16:26",
-                "lot_number": "LOT1OP202508",
-                "units": 60
-              },
-              {
-                "blood_type": "O-",
-                "bloodbank_id": 1,
-                "created_at": "2025-08-19 16:16:26",
-                "expiry_date": "00:00:00",
-                "id": 8,
-                "last_updated": "2025-08-19 16:16:26",
-                "lot_number": "LOT1ON202508",
-                "units": 45
-              }
-            ],
-            "location": "100 Blood Drive, New York, NY 10001",
-            "name": "Central Blood Bank",
-            "role": "bloodbank",
-            "stock_levels": {
-              "A+": 50,
-              "A-": 30,
-              "AB+": 20,
-              "AB-": 15,
-              "B+": 40,
-              "B-": 25,
-              "O+": 60,
-              "O-": 45
-            },
-            "updatedAt": "2025-08-19 16:16:25"
-          }
-        },
-        "message": "Blood stock retrieved successfully",
         "success": true
       }
     },
@@ -3890,8 +918,8 @@
           "request": {
             "blood_group": "A+",
             "blood_inventory_id": null,
-            "bloodbank_id": 1,
-            "created_at": "2025-08-19 17:57:31",
+            "bloodbank_id": null,
+            "created_at": "2025-09-07 07:47:36",
             "id": 2,
             "location": "Test City",
             "quantity_units": 1,
@@ -3900,7 +928,7 @@
             "requester_name": "none",
             "requester_phone": "none",
             "status": "pending",
-            "user_id": 16
+            "user_id": 11
           }
         },
         "message": "Blood request submitted successfully",
@@ -3932,38 +960,8 @@
             {
               "blood_group": "A+",
               "blood_inventory_id": null,
-              "bloodbank": {
-                "blood_types_available": [
-                  "A+",
-                  "A-",
-                  "B+",
-                  "B-",
-                  "AB+",
-                  "AB-",
-                  "O+",
-                  "O-"
-                ],
-                "category": "Government",
-                "contact_no": "+1-555-0301",
-                "email": "info@centralbloodbank.org",
-                "id": 1,
-                "location": "100 Blood Drive, New York, NY 10001",
-                "name": "Central Blood Bank",
-                "role": "bloodbank",
-                "stock_levels": {
-                  "A+": 50,
-                  "A-": 30,
-                  "AB+": 20,
-                  "AB-": 15,
-                  "B+": 40,
-                  "B-": 25,
-                  "O+": 60,
-                  "O-": 45
-                },
-                "updatedAt": "2025-08-19 16:16:25"
-              },
-              "bloodbank_id": 1,
-              "created_at": "2025-08-19 17:57:31",
+              "bloodbank_id": null,
+              "created_at": "2025-09-07 07:47:36",
               "id": 2,
               "location": "Test City",
               "quantity_units": 1,
@@ -3973,16 +971,16 @@
               "requester_phone": "none",
               "status": "pending",
               "user": {
-                "created_at": "2025-08-19 17:56:13",
-                "email": "user_1755626170_mcno@example.com",
+                "created_at": "2025-09-07 07:46:41",
+                "email": "user_1757231199_njzq@example.com",
                 "fullname": "Test User",
-                "id": 16,
+                "id": 11,
                 "location": null,
                 "phone_num": "+10000000000",
                 "role": "user",
-                "username": "user_1755626170_mcno"
+                "username": "user_1757231199_njzq"
               },
-              "user_id": 16
+              "user_id": 11
             }
           ]
         },
@@ -4005,13 +1003,13 @@
           "emergency": {
             "audio_filename": null,
             "contact_number": "1234567890",
-            "created_at": "2025-08-19 17:57:35",
+            "created_at": "2025-09-07 07:47:40",
             "details": "test",
             "emergency_type": "medical",
             "forward_status": "Pending",
             "forwarded_to_org": null,
             "hospital_id": null,
-            "id": 7,
+            "id": 2,
             "image_filename": null,
             "location": "Test Location",
             "user_id": null,
@@ -4035,58 +1033,7 @@
       "note": null,
       "response": {
         "data": {
-          "ambulances": [
-            {
-              "current_lat": null,
-              "current_lng": null,
-              "driver_name": "John Driver",
-              "driver_phone": "+1-555-0401",
-              "hospital": {
-                "bedAvailability": 150,
-                "contact_num": "+1-555-0101",
-                "createdAt": "2025-08-19 16:16:22",
-                "email": "info@citygeneral.com",
-                "hospital_info_id": 1,
-                "hospital_type": "Government",
-                "id": 1,
-                "lastupdatedBy": null,
-                "location": "123 Main Street, New York, NY 10001",
-                "name": "City General Hospital",
-                "opd_status": "Open",
-                "oxygenUnits": 50
-              },
-              "hospital_id": 1,
-              "id": 1,
-              "last_reported": "2025-08-19 16:16:26",
-              "status": "vacant",
-              "type": "public"
-            },
-            {
-              "current_lat": null,
-              "current_lng": null,
-              "driver_name": "Mike Transport",
-              "driver_phone": "+1-555-0402",
-              "hospital": {
-                "bedAvailability": 200,
-                "contact_num": "+1-555-0102",
-                "createdAt": "2025-08-19 16:16:22",
-                "email": "info@metropmedical.com",
-                "hospital_info_id": 2,
-                "hospital_type": "Private",
-                "id": 2,
-                "lastupdatedBy": null,
-                "location": "456 Health Ave, Los Angeles, CA 90001",
-                "name": "Metro Medical Center",
-                "opd_status": "Open",
-                "oxygenUnits": 75
-              },
-              "hospital_id": 2,
-              "id": 2,
-              "last_reported": "2025-08-19 16:16:26",
-              "status": "vacant",
-              "type": "private"
-            }
-          ]
+          "ambulances": []
         },
         "message": "Available ambulances retrieved successfully",
         "success": true
@@ -4109,13 +1056,13 @@
             {
               "audio_filename": null,
               "contact_number": "1234567890",
-              "created_at": "2025-08-19 17:57:35",
+              "created_at": "2025-09-07 07:47:40",
               "details": "test",
               "emergency_type": "medical",
               "forward_status": "Pending",
               "forwarded_to_org": null,
               "hospital_id": null,
-              "id": 7,
+              "id": 2,
               "image_filename": null,
               "location": "Test Location",
               "user_id": null,
@@ -4124,120 +1071,15 @@
             {
               "audio_filename": null,
               "contact_number": "1234567890",
-              "created_at": "2025-08-19 17:47:34",
+              "created_at": "2025-09-07 07:13:12",
               "details": "test",
               "emergency_type": "medical",
               "forward_status": "Pending",
               "forwarded_to_org": null,
               "hospital_id": null,
-              "id": 6,
-              "image_filename": null,
-              "location": "Test Location",
-              "user_id": null,
-              "user_ip": "127.0.0.1"
-            },
-            {
-              "audio_filename": null,
-              "contact_number": "555-EMERGENCY",
-              "created_at": "2025-08-19 17:31:54",
-              "details": "Route testing emergency call",
-              "emergency_type": "Medical",
-              "forward_status": "Pending",
-              "forwarded_to_org": null,
-              "hospital_id": null,
-              "id": 5,
-              "image_filename": null,
-              "location": "Route Test Emergency Location",
-              "user": {
-                "created_at": "2025-08-19 16:48:34",
-                "email": "testuser2@example.com",
-                "fullname": "Test User 2",
-                "id": 5,
-                "location": "Test City 2",
-                "phone_num": "1234567891",
-                "role": "user",
-                "username": "testuser2"
-              },
-              "user_id": 5,
-              "user_ip": "127.0.0.1"
-            },
-            {
-              "audio_filename": null,
-              "contact_number": "555-FINAL-TEST",
-              "created_at": "2025-08-19 17:26:06",
-              "details": "Comprehensive testing emergency",
-              "emergency_type": "Medical",
-              "forward_status": "Pending",
-              "forwarded_to_org": null,
-              "hospital_id": null,
-              "id": 4,
-              "image_filename": null,
-              "location": "Final Test Location",
-              "user": {
-                "created_at": "2025-08-19 16:48:34",
-                "email": "testuser2@example.com",
-                "fullname": "Test User 2",
-                "id": 5,
-                "location": "Test City 2",
-                "phone_num": "1234567891",
-                "role": "user",
-                "username": "testuser2"
-              },
-              "user_id": 5,
-              "user_ip": "127.0.0.1"
-            },
-            {
-              "audio_filename": null,
-              "contact_number": "555-EMERGENCY",
-              "created_at": "2025-08-19 17:20:22",
-              "details": "CRUD test emergency case",
-              "emergency_type": "Medical",
-              "forward_status": "processed",
-              "forwarded_to_org": null,
-              "hospital_id": null,
-              "id": 3,
-              "image_filename": null,
-              "location": "CRUD Test Location",
-              "user": {
-                "created_at": "2025-08-19 16:48:34",
-                "email": "testuser2@example.com",
-                "fullname": "Test User 2",
-                "id": 5,
-                "location": "Test City 2",
-                "phone_num": "1234567891",
-                "role": "user",
-                "username": "testuser2"
-              },
-              "user_id": 5,
-              "user_ip": "127.0.0.1"
-            },
-            {
-              "audio_filename": null,
-              "contact_number": "555-TEST",
-              "created_at": "2025-08-19 17:14:54",
-              "details": "WebSocket test emergency",
-              "emergency_type": "Medical",
-              "forward_status": "Pending",
-              "forwarded_to_org": null,
-              "hospital_id": null,
-              "id": 2,
-              "image_filename": null,
-              "location": "123 Test Street",
-              "user_id": null,
-              "user_ip": "127.0.0.1"
-            },
-            {
-              "audio_filename": null,
-              "contact_number": "555-1234",
-              "created_at": "2025-08-19 17:08:30",
-              "details": "Heart attack victim",
-              "emergency_type": "Medical",
-              "forward_status": "Pending",
-              "forwarded_to_org": null,
-              "hospital_id": null,
               "id": 1,
               "image_filename": null,
-              "location": "123 Main St",
+              "location": "Test Location",
               "user_id": null,
               "user_ip": "127.0.0.1"
             }
@@ -4248,7 +1090,7 @@
             "page": 1,
             "pages": 1,
             "per_page": 20,
-            "total": 7
+            "total": 2
           }
         },
         "message": "Emergencies retrieved successfully",
@@ -4268,34 +1110,20 @@
       "note": null,
       "response": {
         "data": {
-          "recent_appointments": [
-            {
-              "appointment_type": "opd",
-              "booked_by_user_id": 16,
-              "created_at": "2025-08-19 17:57:12",
-              "doctor_id": 1,
-              "hospital_id": 1,
-              "id": 6,
-              "patient_id": 16,
-              "reason": "Test visit",
-              "scheduled_time": "2025-08-20 09:30:00",
-              "slot_id": 10,
-              "status": "cancelled"
-            }
-          ],
+          "recent_appointments": [],
           "stats": {
-            "total_appointments": 1,
-            "upcoming_appointments": 1
+            "total_appointments": 0,
+            "upcoming_appointments": 0
           },
           "user": {
-            "created_at": "2025-08-19 17:56:13",
-            "email": "user_1755626170_mcno@example.com",
+            "created_at": "2025-09-07 07:46:41",
+            "email": "user_1757231199_njzq@example.com",
             "fullname": "Test User",
-            "id": 16,
+            "id": 11,
             "location": null,
             "phone_num": "+10000000000",
             "role": "user",
-            "username": "user_1755626170_mcno"
+            "username": "user_1757231199_njzq"
           }
         },
         "message": "User dashboard retrieved successfully",
@@ -4315,84 +1143,18 @@
       "note": null,
       "response": {
         "data": {
-          "recent_appointments": [
-            {
-              "appointment_type": "opd",
-              "booked_by_user_id": 16,
-              "created_at": "2025-08-19 17:57:12",
-              "doctor_id": 1,
-              "hospital_id": 1,
-              "id": 6,
-              "patient_id": 16,
-              "reason": "Test visit",
-              "scheduled_time": "2025-08-20 09:30:00",
-              "slot_id": 10,
-              "status": "cancelled"
-            },
-            {
-              "appointment_type": "opd",
-              "booked_by_user_id": 15,
-              "created_at": "2025-08-19 17:55:37",
-              "doctor_id": 1,
-              "hospital_id": 1,
-              "id": 5,
-              "patient_id": 15,
-              "reason": "Debug test appointment",
-              "scheduled_time": "2025-08-20 09:30:00",
-              "slot_id": 10,
-              "status": "cancelled"
-            },
-            {
-              "appointment_type": "opd",
-              "booked_by_user_id": 14,
-              "created_at": "2025-08-19 17:54:24",
-              "doctor_id": 1,
-              "hospital_id": 1,
-              "id": 4,
-              "patient_id": 14,
-              "reason": "Debug test appointment",
-              "scheduled_time": "2025-08-20 09:00:00",
-              "slot_id": 9,
-              "status": "confirmed"
-            },
-            {
-              "appointment_type": "opd",
-              "booked_by_user_id": 12,
-              "created_at": "2025-08-19 17:47:11",
-              "doctor_id": 1,
-              "hospital_id": 1,
-              "id": 3,
-              "patient_id": 12,
-              "reason": "Test visit",
-              "scheduled_time": "2025-08-20 09:00:00",
-              "slot_id": 9,
-              "status": "confirmed"
-            },
-            {
-              "appointment_type": "opd",
-              "booked_by_user_id": 5,
-              "created_at": "2025-08-19 17:36:42",
-              "doctor_id": 1,
-              "hospital_id": 1,
-              "id": 2,
-              "patient_id": 5,
-              "reason": "Fixed route test appointment",
-              "scheduled_time": "2025-08-20 09:30:00",
-              "slot_id": 10,
-              "status": "confirmed"
-            }
-          ],
+          "recent_appointments": [],
           "recent_emergencies": [
             {
               "audio_filename": null,
               "contact_number": "1234567890",
-              "created_at": "2025-08-19 17:57:35",
+              "created_at": "2025-09-07 07:47:40",
               "details": "test",
               "emergency_type": "medical",
               "forward_status": "Pending",
               "forwarded_to_org": null,
               "hospital_id": null,
-              "id": 7,
+              "id": 2,
               "image_filename": null,
               "location": "Test Location",
               "user_id": null,
@@ -4401,121 +1163,76 @@
             {
               "audio_filename": null,
               "contact_number": "1234567890",
-              "created_at": "2025-08-19 17:47:34",
+              "created_at": "2025-09-07 07:13:12",
               "details": "test",
               "emergency_type": "medical",
               "forward_status": "Pending",
               "forwarded_to_org": null,
               "hospital_id": null,
-              "id": 6,
+              "id": 1,
               "image_filename": null,
               "location": "Test Location",
               "user_id": null,
-              "user_ip": "127.0.0.1"
-            },
-            {
-              "audio_filename": null,
-              "contact_number": "555-EMERGENCY",
-              "created_at": "2025-08-19 17:31:54",
-              "details": "Route testing emergency call",
-              "emergency_type": "Medical",
-              "forward_status": "Pending",
-              "forwarded_to_org": null,
-              "hospital_id": null,
-              "id": 5,
-              "image_filename": null,
-              "location": "Route Test Emergency Location",
-              "user_id": 5,
-              "user_ip": "127.0.0.1"
-            },
-            {
-              "audio_filename": null,
-              "contact_number": "555-FINAL-TEST",
-              "created_at": "2025-08-19 17:26:06",
-              "details": "Comprehensive testing emergency",
-              "emergency_type": "Medical",
-              "forward_status": "Pending",
-              "forwarded_to_org": null,
-              "hospital_id": null,
-              "id": 4,
-              "image_filename": null,
-              "location": "Final Test Location",
-              "user_id": 5,
-              "user_ip": "127.0.0.1"
-            },
-            {
-              "audio_filename": null,
-              "contact_number": "555-EMERGENCY",
-              "created_at": "2025-08-19 17:20:22",
-              "details": "CRUD test emergency case",
-              "emergency_type": "Medical",
-              "forward_status": "processed",
-              "forwarded_to_org": null,
-              "hospital_id": null,
-              "id": 3,
-              "image_filename": null,
-              "location": "CRUD Test Location",
-              "user_id": 5,
               "user_ip": "127.0.0.1"
             }
           ],
           "recent_users": [
             {
-              "created_at": "2025-08-19 17:56:13",
-              "email": "user_1755626170_mcno@example.com",
+              "created_at": "2025-09-07 07:46:41",
+              "email": "user_1757231199_njzq@example.com",
               "fullname": "Test User",
-              "id": 16,
+              "id": 11,
               "location": null,
               "phone_num": "+10000000000",
               "role": "user",
-              "username": "user_1755626170_mcno"
+              "username": "user_1757231199_njzq"
             },
             {
-              "created_at": "2025-08-19 17:55:30",
-              "email": "debug_1755626128@example.com",
-              "fullname": "Debug User",
-              "id": 15,
-              "location": null,
-              "phone_num": "+1234567890",
-              "role": "user",
-              "username": "debug_user_1755626128"
-            },
-            {
-              "created_at": "2025-08-19 17:54:18",
-              "email": "debug_1755626056@example.com",
-              "fullname": "Debug User",
-              "id": 14,
-              "location": null,
-              "phone_num": "+1234567890",
-              "role": "user",
-              "username": "debug_user_1755626056"
-            },
-            {
-              "created_at": "2025-08-19 17:50:46",
-              "email": "test_1755625843@example.com",
+              "created_at": "2025-09-07 07:12:08",
+              "email": "user_1757229126_xafy@example.com",
               "fullname": "Test User",
-              "id": 13,
-              "location": null,
-              "phone_num": "+1234567890",
-              "role": "user",
-              "username": "test_user_1755625843"
-            },
-            {
-              "created_at": "2025-08-19 17:46:11",
-              "email": "user_1755625569_tlmq@example.com",
-              "fullname": "Test User",
-              "id": 12,
+              "id": 10,
               "location": null,
               "phone_num": "+10000000000",
               "role": "user",
-              "username": "user_1755625569_tlmq"
+              "username": "user_1757229126_xafy"
+            },
+            {
+              "created_at": "2025-09-07 07:01:05",
+              "email": "test_1757228462@example.com",
+              "fullname": "Test User",
+              "id": 9,
+              "location": null,
+              "phone_num": "+1234567890",
+              "role": "user",
+              "username": "test_user_1757228462"
+            },
+            {
+              "created_at": "2025-09-07 06:59:47",
+              "email": "debug_1757228385@example.com",
+              "fullname": "Debug User",
+              "id": 8,
+              "location": null,
+              "phone_num": "+1234567890",
+              "role": "user",
+              "username": "debug_user_1757228385"
+            },
+            {
+              "created_at": "2025-08-21 19:57:10",
+              "email": "john@example.com",
+              "fullname": "John Doe",
+              "id": 7,
+              "location": "New York, NY",
+              "phone_num": "+1234567890",
+              "role": "user",
+              "username": "john_doe"
             }
           ],
           "stats": {
-            "total_appointments": 6,
-            "total_emergencies": 7,
-            "total_hospitals": 8,
-            "total_users": 16
+            "total_appointments": 0,
+            "total_emergencies": 2,
+            "total_hospitals": 1,
+            "total_users": 11
           }
         },
         "message": "Admin dashboard retrieved successfully",
@@ -4536,9 +1253,9 @@
       "response": {
         "data": {
           "stats": {
-            "total_admins": 3,
-            "total_hospitals": 8,
-            "total_users": 16
+            "total_admins": 2,
+            "total_hospitals": 1,
+            "total_users": 11
           }
         },
         "message": "Dashboard statistics retrieved successfully",
@@ -4558,28 +1275,14 @@
       "note": null,
       "response": {
         "data": {
-          "logs": [
-            {
-              "action": "{\"timestamp\": \"2025-08-19T17:47:57.655835\", \"user_id\": \"2\", \"user_type\": \"admin\", \"user_role\": \"admin\", \"action\": \"test_action\", \"endpoint\": \"audit.log_custom_action\", \"method\": \"POST\", \"target_user_id\": null, \"status\": \"success\", \"risk_level\": \"medium\", \"ip_address\": \"127.0.0.1\", \"user_agent\": \"python-requests/2.32.5\", \"details\": {\"k\": \"v\"}, \"session_id\": \"76469826-1e9e-43ac-bb5a-8994dc48a799\"}",
-              "admin": {
-                "id": 2,
-                "role": "admin",
-                "timestamp": "2025-08-19 16:17:40",
-                "username": "admin@hospital.com"
-              },
-              "admin_id": 2,
-              "id": 1,
-              "timestamp": "2025-08-19 17:47:57",
-              "user_id": null
-            }
-          ],
+          "logs": [],
           "pagination": {
             "has_next": false,
             "has_prev": false,
             "page": 1,
-            "pages": 1,
+            "pages": 0,
             "per_page": 20,
-            "total": 1
+            "total": 0
           }
         },
         "message": "Admin logs retrieved successfully",
@@ -4599,10 +1302,10 @@
       "response": {
         "data": {
           "admin": {
-            "id": 4,
+            "id": 3,
             "role": "admin",
-            "timestamp": "2025-08-19 17:57:49",
-            "username": "adm_1755626267_fwjn"
+            "timestamp": "2025-09-07 07:47:55",
+            "username": "adm_1757231273_xlkc"
           }
         },
         "message": "Admin created successfully",
@@ -4623,52 +1326,20 @@
       "response": {
         "data": {
           "filters": {
-            "end_date": "2025-08-19T17:57:52.013183",
+            "end_date": "2025-09-07T07:47:57.676651",
             "event_type": null,
             "risk_level": null,
-            "start_date": "2025-07-20T17:57:52.013183",
+            "start_date": "2025-08-08T07:47:57.676651",
             "user_id": null
           },
-          "logs": [
-            {
-              "action": "{\"timestamp\": \"2025-08-19T17:47:57.655835\", \"user_id\": \"2\", \"user_type\": \"admin\", \"user_role\": \"admin\", \"action\": \"test_action\", \"endpoint\": \"audit.log_custom_action\", \"method\": \"POST\", \"target_user_id\": null, \"status\": \"success\", \"risk_level\": \"medium\", \"ip_address\": \"127.0.0.1\", \"user_agent\": \"python-requests/2.32.5\", \"details\": {\"k\": \"v\"}, \"session_id\": \"76469826-1e9e-43ac-bb5a-8994dc48a799\"}",
-              "admin": {
-                "id": 2,
-                "role": "admin",
-                "timestamp": "2025-08-19 16:17:40",
-                "username": "admin@hospital.com"
-              },
-              "admin_id": 2,
-              "id": 1,
-              "parsed_action": {
-                "action": "test_action",
-                "details": {
-                  "k": "v"
-                },
-                "endpoint": "audit.log_custom_action",
-                "ip_address": "127.0.0.1",
-                "method": "POST",
-                "risk_level": "medium",
-                "session_id": "76469826-1e9e-43ac-bb5a-8994dc48a799",
-                "status": "success",
-                "target_user_id": null,
-                "timestamp": "2025-08-19T17:47:57.655835",
-                "user_agent": "python-requests/2.32.5",
-                "user_id": "2",
-                "user_role": "admin",
-                "user_type": "admin"
-              },
-              "timestamp": "2025-08-19 17:47:57",
-              "user_id": null
-            }
-          ],
+          "logs": [],
           "pagination": {
             "has_next": false,
             "has_prev": false,
             "page": 1,
-            "pages": 1,
+            "pages": 0,
             "per_page": 50,
-            "total": 1
+            "total": 0
           }
         },
         "message": "Audit logs retrieved successfully",
@@ -4690,8 +1361,8 @@
         "data": {
           "period": {
             "days": 7,
-            "end_date": "2025-08-19T17:57:54.058279",
-            "start_date": "2025-08-12T17:57:54.058279"
+            "end_date": "2025-09-07T07:47:59.731558",
+            "start_date": "2025-08-31T07:47:59.731558"
           },
           "summary": {
             "login_attempts": {
@@ -4707,14 +1378,8 @@
             },
             "suspicious_activities": [],
             "suspicious_activities_count": 0,
-            "top_active_users": [
-              {
-                "activity_count": 1,
-                "user_id": 2,
-                "username": "admin@hospital.com"
-              }
-            ],
-            "total_audit_logs": 1
+            "top_active_users": [],
+            "total_audit_logs": 0
           }
         },
         "message": "Security summary retrieved successfully",
@@ -4724,7 +1389,7 @@
     {
       "name": "audit:user_trail",
       "method": "GET",
-      "url": "http://localhost:5000/audit/user-activity-trail/2",
+      "url": "http://localhost:5000/audit/user-activity-trail/1",
       "expected": [
         200,
         201
@@ -4734,49 +1399,23 @@
       "note": null,
       "response": {
         "data": {
-          "activities": [
-            {
-              "action": "{\"timestamp\": \"2025-08-19T17:47:57.655835\", \"user_id\": \"2\", \"user_type\": \"admin\", \"user_role\": \"admin\", \"action\": \"test_action\", \"endpoint\": \"audit.log_custom_action\", \"method\": \"POST\", \"target_user_id\": null, \"status\": \"success\", \"risk_level\": \"medium\", \"ip_address\": \"127.0.0.1\", \"user_agent\": \"python-requests/2.32.5\", \"details\": {\"k\": \"v\"}, \"session_id\": \"76469826-1e9e-43ac-bb5a-8994dc48a799\"}",
-              "admin_id": 2,
-              "id": 1,
-              "parsed_action": {
-                "action": "test_action",
-                "details": {
-                  "k": "v"
-                },
-                "endpoint": "audit.log_custom_action",
-                "ip_address": "127.0.0.1",
-                "method": "POST",
-                "risk_level": "medium",
-                "session_id": "76469826-1e9e-43ac-bb5a-8994dc48a799",
-                "status": "success",
-                "target_user_id": null,
-                "timestamp": "2025-08-19T17:47:57.655835",
-                "user_agent": "python-requests/2.32.5",
-                "user_id": "2",
-                "user_role": "admin",
-                "user_type": "admin"
-              },
-              "timestamp": "2025-08-19 17:47:57",
-              "user_id": null
-            }
-          ],
+          "activities": [],
           "period": {
             "days": 30,
-            "end_date": "2025-08-19T17:57:56.115373",
-            "start_date": "2025-07-20T17:57:56.115373"
+            "end_date": "2025-09-07T07:48:01.990751",
+            "start_date": "2025-08-08T07:48:01.990751"
           },
-          "total_activities": 1,
+          "total_activities": 0,
           "user_info": {
-            "created_at": "2025-08-19 16:16:22",
-            "email": "jane@example.com",
-            "fullname": "Jane Smith",
-            "id": 2,
-            "location": "Los Angeles, CA",
-            "phone_num": "+1234567891",
+            "created_at": "2025-08-14 11:48:04",
+            "email": "test@example.com",
+            "fullname": "Test User",
+            "id": 1,
+            "location": null,
+            "phone_num": "+1234567890",
             "role": "user",
             "type": "user",
-            "username": "jane_smith"
+            "username": "testuser"
           }
         },
         "message": "User activity trail retrieved successfully",
@@ -4791,12 +1430,12 @@
         200,
         201
       ],
-      "status_code": 200,
-      "ok": true,
+      "status_code": 500,
+      "ok": false,
       "note": null,
       "response": {
-        "message": "Action logged successfully",
-        "success": true
+        "message": "Failed to log action",
+        "success": false
       }
     },
     {
@@ -4840,7 +1479,7 @@
             "Set up real-time monitoring alerts"
           ],
           "report_type": "hipaa",
-          "total_data_access_events": 2,
+          "total_data_access_events": 0,
           "user_access_summary": {}
         },
         "message": "Compliance report generated successfully",
@@ -4971,83 +1610,20 @@
       "response": {
         "data": {
           "export_format": "json",
-          "export_timestamp": "2025-08-19T17:58:08.499242",
-          "logs": [
-            {
-              "action": "{\"timestamp\": \"2025-08-19T17:57:58.173107\", \"user_id\": \"2\", \"user_type\": \"admin\", \"user_role\": \"admin\", \"action\": \"test_action\", \"endpoint\": \"audit.log_custom_action\", \"method\": \"POST\", \"target_user_id\": null, \"status\": \"success\", \"risk_level\": \"medium\", \"ip_address\": \"127.0.0.1\", \"user_agent\": \"python-requests/2.32.5\", \"details\": {\"k\": \"v\"}, \"session_id\": \"608257ad-3783-4273-aab1-199fa24f3394\"}",
-              "admin": {
-                "id": 2,
-                "role": "admin",
-                "timestamp": "2025-08-19 16:17:40",
-                "username": "admin@hospital.com"
-              },
-              "admin_id": 2,
-              "id": 2,
-              "parsed_action": {
-                "action": "test_action",
-                "details": {
-                  "k": "v"
-                },
-                "endpoint": "audit.log_custom_action",
-                "ip_address": "127.0.0.1",
-                "method": "POST",
-                "risk_level": "medium",
-                "session_id": "608257ad-3783-4273-aab1-199fa24f3394",
-                "status": "success",
-                "target_user_id": null,
-                "timestamp": "2025-08-19T17:57:58.173107",
-                "user_agent": "python-requests/2.32.5",
-                "user_id": "2",
-                "user_role": "admin",
-                "user_type": "admin"
-              },
-              "timestamp": "2025-08-19 17:57:58",
-              "user_id": null
-            },
-            {
-              "action": "{\"timestamp\": \"2025-08-19T17:47:57.655835\", \"user_id\": \"2\", \"user_type\": \"admin\", \"user_role\": \"admin\", \"action\": \"test_action\", \"endpoint\": \"audit.log_custom_action\", \"method\": \"POST\", \"target_user_id\": null, \"status\": \"success\", \"risk_level\": \"medium\", \"ip_address\": \"127.0.0.1\", \"user_agent\": \"python-requests/2.32.5\", \"details\": {\"k\": \"v\"}, \"session_id\": \"76469826-1e9e-43ac-bb5a-8994dc48a799\"}",
-              "admin": {
-                "id": 2,
-                "role": "admin",
-                "timestamp": "2025-08-19 16:17:40",
-                "username": "admin@hospital.com"
-              },
-              "admin_id": 2,
-              "id": 1,
-              "parsed_action": {
-                "action": "test_action",
-                "details": {
-                  "k": "v"
-                },
-                "endpoint": "audit.log_custom_action",
-                "ip_address": "127.0.0.1",
-                "method": "POST",
-                "risk_level": "medium",
-                "session_id": "76469826-1e9e-43ac-bb5a-8994dc48a799",
-                "status": "success",
-                "target_user_id": null,
-                "timestamp": "2025-08-19T17:47:57.655835",
-                "user_agent": "python-requests/2.32.5",
-                "user_id": "2",
-                "user_role": "admin",
-                "user_type": "admin"
-              },
-              "timestamp": "2025-08-19 17:47:57",
-              "user_id": null
-            }
-          ],
+          "export_timestamp": "2025-09-07T07:48:14.480620",
+          "logs": [],
           "metadata": {
             "export_purpose": "compliance_audit",
-            "generated_by": "2",
+            "generated_by": "1",
             "period": {
-              "end_date": "2025-08-19T17:58:08.496242",
+              "end_date": "2025-09-07T07:48:14.476809",
               "event_type": null,
               "risk_level": null,
-              "start_date": "2025-07-20T17:58:08.496242",
+              "start_date": "2025-08-08T07:48:14.476809",
               "user_id": null
             }
           },
-          "total_records": 2
+          "total_records": 0
         },
         "message": "Audit logs exported successfully",
         "success": true
@@ -5204,12 +1780,12 @@
           "notifications": [
             {
               "body": "Test notification",
-              "created_at": "2025-08-19 17:58:20",
-              "id": 7,
+              "created_at": "2025-09-07 07:48:26",
+              "id": 2,
               "meta_info": null,
               "read": false,
               "title": "Hello",
-              "user_id": 16
+              "user_id": 11
             }
           ],
           "pagination": {

@@ -354,3 +354,12 @@ def change_password():
     except Exception as e:
         db.session.rollback()
         return create_error_response(f'Password change failed: {str(e)}', status_code=500)
+
+
+'''
+Routes left for testing :
+-------------------------
+1. forgot-Password
+2. refresh
+3. change-password
+'''

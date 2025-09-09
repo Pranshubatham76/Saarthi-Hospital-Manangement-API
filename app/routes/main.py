@@ -15,6 +15,9 @@ def api_welcome():
             'version': '1.0.0',
             'description': 'RESTful API for complete hospital management system',
             'documentation': '/api/info',
+            'interactive_docs': '/api-docs',
+            'swagger_ui': '/swagger',
+            'swagger_json': '/swagger.json',
             'health_check': '/health'
         }
     )

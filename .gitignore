@@ -14,3 +14,7 @@ LINKEDIN_POST.md
 solve.txt
 logs/
 DEPLOYMENT.md
+/__pycache__
+./app/__pycache__
+.intance/
+./logs/

@@ -528,3 +528,8 @@ def update_notification_settings():
         
     except Exception as e:
         return create_error_response(f'Failed to update notification settings: {str(e)}', status_code=500)
+
+
+
+
+

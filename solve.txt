@@ -1,1 +1,0 @@
-In some routes only post request is there no get request.

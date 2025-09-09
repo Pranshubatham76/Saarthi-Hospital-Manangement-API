@@ -1,0 +1,794 @@
+"""
+Comprehensive Smoke Tests for Hospital Management System API
+Tests all available routes to ensure basic functionality
+"""
+
+import pytest
+import json
+from app import create_app
+from app.models import db, Users, Admin, Hospital_info, Hospital, BloodBank, Doctors_Info
+from app.utils.helpers import hash_password
+from flask_jwt_extended import create_access_token
+
+
+@pytest.fixture
+def app():
+    """Create application for testing"""
+    app = create_app()
+    app.config['TESTING'] = True
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+    app.config['JWT_SECRET_KEY'] = 'test-secret-key'
+    
+    with app.app_context():
+        db.create_all()
+        yield app
+        db.drop_all()
+
+'''
+We create test client because it allow to send http requests to the application without running the actual server.
+It provides an isolated environment where you can test your routes, middleware, and response directly without needing to deploy or run the app normally.
+'''
+@pytest.fixture
+def client(app):
+    """Create test client"""
+    return app.test_client()
+
+
+@pytest.fixture
+def auth_headers(app):
+    """Create authentication headers for different user types"""
+    with app.app_context():
+        # Create test users
+        admin = Admin(
+            username='test_admin',
+            password=hash_password('admin123'),
+            role='admin'
+        )
+        
+        user = Users(
+            username='test_user',
+            fullname='Test User',
+            email='test@example.com',
+            password=hash_password('user123'),
+            role='user'
+        )
+        
+        hospital_info = Hospital_info(
+            username='test_hospital',
+            name='Test Hospital',
+            type='General',
+            email='hospital@example.com',
+            password=hash_password('hospital123'),
+            location='Test City',
+            reg_id='TEST001'
+        )
+        
+        db.session.add_all([admin, user, hospital_info])
+        db.session.commit()
+        
+        # Create tokens
+        admin_token = create_access_token(
+            identity=admin.id,
+            additional_claims={'role': 'admin', 'type': 'admin'}
+        )
+        
+        user_token = create_access_token(
+            identity=user.id,
+            additional_claims={'role': 'user', 'type': 'user'}
+        )
+        
+        hospital_token = create_access_token(
+            identity=hospital_info.id,
+            additional_claims={'role': 'hospital_admin', 'type': 'hospital'}
+        )
+        
+        return {
+            'admin': {'Authorization': f'Bearer {admin_token}'},
+            'user': {'Authorization': f'Bearer {user_token}'},
+            'hospital': {'Authorization': f'Bearer {hospital_token}'},
+            'admin_id': admin.id,
+            'user_id': user.id,
+            'hospital_id': hospital_info.id
+        }
+
+
+class TestMainRoutes:
+    """Test main application routes"""
+    
+    def test_api_welcome(self, client):
+        """Test API welcome endpoint"""
+        response = client.get('/')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['success'] is True
+        assert 'Hospital Management System API' in data['message']
+    
+    def test_api_info(self, client):
+        """Test API info endpoint"""
+        response = client.get('/api/info')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['success'] is True
+        assert 'endpoints' in data['data']
+    
+    def test_health_check(self, client):
+        """Test health check endpoint"""
+        response = client.get('/health')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['success'] is True
+        assert data['data']['status'] == 'healthy'
+    
+    def test_contact_api(self, client):
+        """Test contact form endpoint"""
+        contact_data = {
+            'name': 'Test User',
+            'email': 'test@example.com',
+            'message': 'Test message'
+        }
+        response = client.post('/contact', 
+                             data=json.dumps(contact_data),
+                             content_type='application/json')
+        assert response.status_code == 201
+        data = json.loads(response.data)
+        assert data['success'] is True
+
+
+class TestAuthRoutes:
+    """Test authentication routes"""
+    
+    def test_register(self, client):
+        """Test user registration"""
+        user_data = {
+            'username': 'newuser',
+            'fullname': 'New User',
+            'email': 'newuser@example.com',
+            'password': 'NewUser123!',
+        }
+        response = client.post('/auth/register',
+                             data=json.dumps(user_data),
+                             content_type='application/json')
+        assert response.status_code == 201
+        data = json.loads(response.data)
+        assert data['success'] is True
+        assert 'access_token' in data['data']
+    
+    def test_login(self, client, auth_headers):
+        """Test user login"""
+        login_data = {
+            'username': 'test_user',
+            'password': 'user123'
+        }
+        response = client.post('/auth/login',
+                             data=json.dumps(login_data),
+                             content_type='application/json')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['success'] is True
+        assert 'access_token' in data['data']
+    
+    def test_admin_login(self, client, auth_headers):
+        """Test admin login"""
+        login_data = {
+            'username': 'test_admin',
+            'password': 'admin123'
+        }
+        response = client.post('/auth/admin/login',
+                             data=json.dumps(login_data),
+                             content_type='application/json')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['success'] is True
+        assert 'access_token' in data['data']
+    
+    def test_hospital_login(self, client, auth_headers):
+        """Test hospital login"""
+        login_data = {
+            'username': 'test_hospital',
+            'password': 'hospital123'
+        }
+        response = client.post('/auth/hospital/login',
+                             data=json.dumps(login_data),
+                             content_type='application/json')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['success'] is True
+        assert 'access_token' in data['data']
+    
+    def test_get_profile(self, client, auth_headers):
+        """Test get user profile"""
+        response = client.get('/auth/profile', headers=auth_headers['user'])
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['success'] is True
+        assert 'user' in data['data']
+    
+    def test_logout(self, client, auth_headers):
+        """Test user logout"""
+        response = client.post('/auth/logout', headers=auth_headers['user'])
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['success'] is True
+    
+    def test_forgot_password(self, client):
+        """Test forgot password"""
+        forgot_data = {'email': 'test@example.com'}
+        response = client.post('/auth/forgot-password',
+                             data=json.dumps(forgot_data),
+                             content_type='application/json')
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['success'] is True
+    
+    def test_change_password(self, client, auth_headers):
+        """Test change password"""
+        change_data = {
+            'current_password': 'user123',
+            'new_password': 'NewPassword123!'
+        }
+        response = client.post('/auth/change-password',
+                             data=json.dumps(change_data),
+                             content_type='application/json',
+                             headers=auth_headers['user'])
+        assert response.status_code == 200
+        data = json.loads(response.data)
+        assert data['success'] is True
+
+
+# class TestUserRoutes:
+#     """Test user management routes"""
+    
+#     def test_get_all_users(self, client, auth_headers):
+#         """Test get all users (admin only)"""
+#         response = client.get('/user/all', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'users' in data['data']
+    
+#     def test_get_user(self, client, auth_headers):
+#         """Test get specific user"""
+#         user_id = auth_headers['user_id']
+#         response = client.get(f'/user/{user_id}', headers=auth_headers['user'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'user' in data['data']
+    
+#     def test_update_profile(self, client, auth_headers):
+#         """Test update user profile"""
+#         update_data = {
+#             'fullname': 'Updated User Name',
+#             'location': 'New Location'
+#         }
+#         response = client.put('/user/profile/update',
+#                             data=json.dumps(update_data),
+#                             content_type='application/json',
+#                             headers=auth_headers['user'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_update_user_role(self, client, auth_headers):
+#         """Test update user role (admin only)"""
+#         user_id = auth_headers['user_id']
+#         role_data = {'role': 'doctor'}
+#         response = client.put(f'/user/update-role/{user_id}',
+#                             data=json.dumps(role_data),
+#                             content_type='application/json',
+#                             headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_get_user_stats(self, client, auth_headers):
+#         """Test get user statistics"""
+#         response = client.get('/user/stats', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'stats' in data['data']
+    
+#     def test_search_users(self, client, auth_headers):
+#         """Test search users"""
+#         response = client.get('/user/search?q=test', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'users' in data['data']
+
+
+# class TestAdminRoutes:
+#     """Test admin routes"""
+    
+#     def test_create_admin(self, client, auth_headers):
+#         """Test create admin"""
+#         admin_data = {
+#             'username': 'new_admin',
+#             'password': 'Admin123!',
+#             'role': 'admin'
+#         }
+#         response = client.post('/admin/create',
+#                              data=json.dumps(admin_data),
+#                              content_type='application/json',
+#                              headers=auth_headers['admin'])
+#         assert response.status_code == 201
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_get_dashboard_stats(self, client, auth_headers):
+#         """Test get dashboard statistics"""
+#         response = client.get('/admin/dashboard/stats', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'stats' in data['data']
+    
+#     def test_get_admin_logs(self, client, auth_headers):
+#         """Test get admin logs"""
+#         response = client.get('/admin/logs', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_get_system_stats(self, client, auth_headers):
+#         """Test get system statistics"""
+#         response = client.get('/admin/stats', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'stats' in data['data']
+    
+#     def test_get_user_details(self, client, auth_headers):
+#         """Test get user details by admin"""
+#         user_id = auth_headers['user_id']
+#         response = client.get(f'/admin/users/{user_id}', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+
+
+# class TestHospitalRoutes:
+#     """Test hospital management routes"""
+    
+#     def test_register_hospital(self, client, auth_headers):
+#         """Test hospital registration"""
+#         hospital_data = {
+#             'username': 'new_hospital',
+#             'name': 'New Hospital',
+#             'type': 'General',
+#             'email': 'newhospital@example.com',
+#             'password': 'Hospital123!',
+#             'location': 'New City',
+#             'contact_num': '1234567890'
+#         }
+#         response = client.post('/hospital/register',
+#                              data=json.dumps(hospital_data),
+#                              content_type='application/json',
+#                              headers=auth_headers['admin'])
+#         assert response.status_code == 201
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_get_all_hospitals(self, client):
+#         """Test get all hospitals"""
+#         response = client.get('/hospital/all')
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'hospitals' in data['data']
+    
+#     def test_get_hospital(self, client, auth_headers, app):
+#         """Test get specific hospital"""
+#         with app.app_context():
+#             # Create a hospital for testing
+#             hospital = Hospital(
+#                 name='Test Hospital',
+#                 location='Test City',
+#                 email='test@hospital.com',
+#                 hospital_type='General'
+#             )
+#             db.session.add(hospital)
+#             db.session.commit()
+            
+#             response = client.get(f'/hospital/{hospital.id}')
+#             assert response.status_code == 200
+#             data = json.loads(response.data)
+#             assert data['success'] is True
+#             assert 'hospital' in data['data']
+
+
+# class TestDoctorRoutes:
+#     """Test doctor management routes"""
+    
+#     def test_register_doctor(self, client, auth_headers):
+#         """Test doctor registration"""
+#         doctor_data = {
+#             'name': 'Dr. Test',
+#             'mail': 'doctor@example.com',
+#             'specialisation': 'General Medicine',
+#             'phone': '1234567890'
+#         }
+#         response = client.post('/doctor/register',
+#                              data=json.dumps(doctor_data),
+#                              content_type='application/json',
+#                              headers=auth_headers['admin'])
+#         assert response.status_code == 201
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_get_all_doctors(self, client):
+#         """Test get all doctors"""
+#         response = client.get('/doctor/all')
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'doctors' in data['data']
+    
+#     def test_get_doctor(self, client, app):
+#         """Test get specific doctor"""
+#         with app.app_context():
+#             doctor = Doctors_Info(
+#                 name='Test Doctor',
+#                 mail='testdoc@example.com',
+#                 specialisation='Cardiology'
+#             )
+#             db.session.add(doctor)
+#             db.session.commit()
+            
+#             response = client.get(f'/doctor/{doctor.id}')
+#             assert response.status_code == 200
+#             data = json.loads(response.data)
+#             assert data['success'] is True
+#             assert 'doctor' in data['data']
+
+
+# class TestBloodBankRoutes:
+#     """Test blood bank routes"""
+    
+#     def test_register_blood_bank(self, client, auth_headers):
+#         """Test blood bank registration"""
+#         blood_bank_data = {
+#             'name': 'Test Blood Bank',
+#             'location': 'Test City',
+#             'contact_no': '1234567890',
+#             'email': 'bloodbank@example.com'
+#         }
+#         response = client.post('/bloodbank/register',
+#                              data=json.dumps(blood_bank_data),
+#                              content_type='application/json',
+#                              headers=auth_headers['admin'])
+#         assert response.status_code == 201
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_get_all_blood_banks(self, client):
+#         """Test get all blood banks"""
+#         response = client.get('/bloodbank/all')
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'blood_banks' in data['data']
+    
+#     def test_request_blood(self, client, auth_headers):
+#         """Test blood request"""
+#         request_data = {
+#             'blood_group': 'O+',
+#             'quantity_units': 2,
+#             'location': 'Test City',
+#             'reference': 'Emergency'
+#         }
+#         response = client.post('/bloodbank/request',
+#                              data=json.dumps(request_data),
+#                              content_type='application/json',
+#                              headers=auth_headers['user'])
+#         assert response.status_code == 201
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_get_blood_requests(self, client, auth_headers):
+#         """Test get blood requests"""
+#         response = client.get('/bloodbank/requests', headers=auth_headers['user'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'requests' in data['data']
+    
+#     def test_get_blood_inventory(self, client, auth_headers):
+#         """Test get blood inventory"""
+#         response = client.get('/bloodbank/inventory', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'inventory' in data['data']
+
+
+# class TestEmergencyRoutes:
+#     """Test emergency routes"""
+    
+#     def test_log_emergency(self, client):
+#         """Test log emergency"""
+#         emergency_data = {
+#             'emergency_type': 'Medical Emergency',
+#             'location': 'Test Location',
+#             'contact_number': '1234567890',
+#             'details': 'Test emergency details'
+#         }
+#         response = client.post('/emergency/call',
+#                              data=json.dumps(emergency_data),
+#                              content_type='application/json')
+#         assert response.status_code == 201
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_get_all_emergencies(self, client, auth_headers):
+#         """Test get all emergencies"""
+#         response = client.get('/emergency/all', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'emergencies' in data['data']
+    
+#     def test_get_emergency_stats(self, client, auth_headers):
+#         """Test get emergency statistics"""
+#         response = client.get('/emergency/stats', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'stats' in data['data']
+    
+#     def test_get_available_ambulances(self, client):
+#         """Test get available ambulances"""
+#         response = client.get('/emergency/ambulances/available')
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'ambulances' in data['data']
+
+
+# class TestAppointmentRoutes:
+#     """Test appointment routes"""
+    
+#     def test_get_my_appointments(self, client, auth_headers):
+#         """Test get user appointments"""
+#         response = client.get('/appointment/my-appointments', headers=auth_headers['user'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'appointments' in data['data']
+    
+#     def test_get_available_slots(self, client):
+#         """Test get available OPD slots"""
+#         response = client.get('/appointment/available-slots?hospital_id=1')
+#         assert response.status_code in [200, 400]  # 400 if hospital not found
+
+
+# class TestDashboardRoutes:
+#     """Test dashboard routes"""
+    
+#     def test_get_dashboard(self, client, auth_headers):
+#         """Test get dashboard data"""
+#         response = client.get('/dashboard/', headers=auth_headers['user'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+
+
+# class TestNotificationRoutes:
+#     """Test notification routes"""
+    
+#     def test_get_my_notifications(self, client, auth_headers):
+#         """Test get user notifications"""
+#         response = client.get('/notifications/my-notifications', headers=auth_headers['user'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'notifications' in data['data']
+    
+#     def test_get_unread_count(self, client, auth_headers):
+#         """Test get unread notification count"""
+#         response = client.get('/notifications/unread-count', headers=auth_headers['user'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'unread_count' in data['data']
+    
+#     def test_mark_all_notifications_read(self, client, auth_headers):
+#         """Test mark all notifications as read"""
+#         response = client.post('/notifications/mark-all-read', headers=auth_headers['user'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_send_notification(self, client, auth_headers):
+#         """Test send notification (admin)"""
+#         notification_data = {
+#             'title': 'Test Notification',
+#             'body': 'This is a test notification',
+#             'user_ids': [auth_headers['user_id']]
+#         }
+#         response = client.post('/notifications/send',
+#                              data=json.dumps(notification_data),
+#                              content_type='application/json',
+#                              headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_get_notification_templates(self, client, auth_headers):
+#         """Test get notification templates"""
+#         response = client.get('/notifications/templates', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'templates' in data['data']
+    
+#     def test_get_notification_settings(self, client, auth_headers):
+#         """Test get notification settings"""
+#         response = client.get('/notifications/settings', headers=auth_headers['user'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'settings' in data['data']
+    
+#     def test_update_notification_settings(self, client, auth_headers):
+#         """Test update notification settings"""
+#         settings_data = {
+#             'email_notifications': True,
+#             'websocket_notifications': False
+#         }
+#         response = client.put('/notifications/settings',
+#                             data=json.dumps(settings_data),
+#                             content_type='application/json',
+#                             headers=auth_headers['user'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+
+
+# class TestAuditRoutes:
+#     """Test audit routes"""
+    
+#     def test_get_audit_logs(self, client, auth_headers):
+#         """Test get audit logs"""
+#         response = client.get('/audit/logs', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_get_security_summary(self, client, auth_headers):
+#         """Test get security summary"""
+#         response = client.get('/audit/security-summary', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_log_custom_action(self, client, auth_headers):
+#         """Test log custom action"""
+#         action_data = {
+#             'action': 'test_action',
+#             'details': {'test': 'data'}
+#         }
+#         response = client.post('/audit/log-action',
+#                              data=json.dumps(action_data),
+#                              content_type='application/json',
+#                              headers=auth_headers['user'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_get_compliance_report(self, client, auth_headers):
+#         """Test get compliance report"""
+#         response = client.get('/audit/compliance-report', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_get_failed_login_attempts(self, client, auth_headers):
+#         """Test get failed login attempts"""
+#         response = client.get('/audit/failed-logins', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_get_data_access_patterns(self, client, auth_headers):
+#         """Test get data access patterns"""
+#         response = client.get('/audit/data-access-patterns', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+
+
+# class TestReportingRoutes:
+#     """Test reporting routes"""
+    
+#     def test_get_hospital_statistics(self, client, auth_headers):
+#         """Test get hospital statistics report"""
+#         response = client.get('/reporting/hospital-statistics', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_get_user_activity_report(self, client, auth_headers):
+#         """Test get user activity report"""
+#         response = client.get('/reporting/user-activity', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+    
+#     def test_export_report_csv(self, client, auth_headers):
+#         """Test export report to CSV"""
+#         response = client.post('/reporting/export/csv', 
+#                              headers=auth_headers['admin'],
+#                              json={'report_type': 'users', 'filters': {}})
+#         assert response.status_code == 200
+    
+#     def test_export_report_excel(self, client, auth_headers):
+#         """Test export report to Excel"""
+#         response = client.post('/reporting/export/excel', 
+#                              headers=auth_headers['admin'],
+#                              json={'report_type': 'users', 'filters': {}})
+#         assert response.status_code == 200
+    
+#     def test_export_report_pdf(self, client, auth_headers):
+#         """Test export report to PDF"""
+#         response = client.post('/reporting/export/pdf', 
+#                              headers=auth_headers['admin'],
+#                              json={'report_type': 'users', 'filters': {}})
+#         assert response.status_code == 200
+    
+#     def test_get_dashboard_charts(self, client, auth_headers):
+#         """Test get dashboard charts"""
+#         response = client.get('/reporting/dashboard-charts', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'charts' in data['data']
+    
+#     def test_get_analytics_summary(self, client, auth_headers):
+#         """Test get analytics summary"""
+#         response = client.get('/reporting/analytics/summary', headers=auth_headers['admin'])
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+
+
+# class TestDocsRoutes:
+#     """Test documentation routes"""
+    
+#     def test_api_docs(self, client):
+#         """Test API documentation page"""
+#         response = client.get('/docs/api-docs')
+#         assert response.status_code == 200
+#         assert b'Hospital Management System' in response.data
+    
+#     def test_api_test(self, client):
+#         """Test API testing interface"""
+#         response = client.get('/docs/api-test')
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert data['success'] is True
+#         assert 'available_endpoints' in data['data']
+
+
+# class TestSwaggerRoutes:
+#     """Test Swagger documentation routes"""
+    
+#     def test_swagger_ui(self, client):
+#         """Test Swagger UI page"""
+#         response = client.get('/swagger')
+#         assert response.status_code == 200
+#         assert b'Swagger UI' in response.data
+    
+#     def test_swagger_json(self, client):
+#         """Test Swagger JSON specification"""
+#         response = client.get('/swagger.json')
+#         assert response.status_code == 200
+#         data = json.loads(response.data)
+#         assert 'swagger' in data
+#         assert 'info' in data
+
+
+if __name__ == '__main__':
+    pytest.main([__file__])
+    

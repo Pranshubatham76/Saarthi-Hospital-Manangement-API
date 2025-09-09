@@ -68,10 +68,12 @@ def create_app(config_name=None):
     from app.routes.emergency import emergency_bp
     from app.routes.admin import admin_bp
     from app.routes.dashboard import dashboard_bp
-    # from app.routes.reporting import reporting_bp  # Temporarily disabled
+    # from app.routes.reporting import reporting_bp
     from app.routes.audit import audit_bp
     from app.routes.notifications import notifications_bp
     from app.routes.main import main_bp
+    from app.routes.swagger import swagger_bp
+    from app.routes.docs import docs_bp
     
     app.register_blueprint(auth_bp, url_prefix='/auth')
     app.register_blueprint(user_bp, url_prefix='/user')
@@ -86,6 +88,8 @@ def create_app(config_name=None):
     app.register_blueprint(audit_bp, url_prefix='/audit')
     app.register_blueprint(notifications_bp, url_prefix='/notifications')
     app.register_blueprint(main_bp)
+    app.register_blueprint(swagger_bp)
+    app.register_blueprint(docs_bp)
     
     # JWT configuration
     @jwt.user_identity_loader

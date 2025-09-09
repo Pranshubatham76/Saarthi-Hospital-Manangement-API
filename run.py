@@ -83,6 +83,8 @@ if __name__ == '__main__':
     print(f"   ✅ Role-based access control (RBAC)")
     print(f"\n🚀 API available at: http://localhost:{port}")
     print(f"📖 API Documentation: http://localhost:{port}/api/info")
+    print(f"🧪 Interactive API Testing: http://localhost:{port}/api-docs")
+    print(f"📋 Swagger UI: http://localhost:{port}/swagger")
     print(f"💚 Health Check: http://localhost:{port}/health")
     
     socketio.run(
